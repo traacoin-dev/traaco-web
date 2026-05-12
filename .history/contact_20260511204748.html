@@ -1,0 +1,750 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Contact TRAACO — Get a premium website for your business. Free consultation & custom quotes." />
+  <title>Contact — TRAACO Digital Studio</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,900;1,400;1,700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'traaco-dark':     '#0F0F0F',
+            'traaco-bg':       '#111111',
+            'traaco-surface':  '#151515',
+            'traaco-gold':     '#C9A84C',
+            'traaco-beige':    '#E8DCC8',
+            'traaco-offwhite': '#F0ECE4',
+            'traaco-gray':     '#9A9A9A',
+          },
+          fontFamily: {
+            playfair: ['Playfair Display', 'serif'],
+            poppins:  ['Poppins', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    /* ── Form Container ── */
+    .contact-form-container {
+      background: rgba(255,255,255,0.02);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 24px;
+      padding: 2.5rem 2rem;
+      transition: border-color 0.4s cubic-bezier(0.25,0.46,0.45,0.94),
+                  box-shadow 0.4s cubic-bezier(0.25,0.46,0.45,0.94);
+    }
+    .contact-form-container:hover {
+      border-color: rgba(201,168,76,0.2);
+      box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+    }
+
+    /* ── Form Groups ── */
+    .form-group { margin-bottom: 1.5rem; position: relative; }
+    .form-label {
+      display: block;
+      font-family: 'Poppins', sans-serif;
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: #F0ECE4;
+      margin-bottom: 0.5rem;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+    .form-label .required { color: #C9A84C; margin-left: 2px; }
+
+    /* ── Base input / select ── */
+    .form-input,
+    .form-select {
+      width: 100%;
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 12px;
+      padding: 0.9rem 1rem;
+      font-family: 'Poppins', sans-serif;
+      font-size: 0.9rem;
+      color: #F0ECE4;
+      transition: border-color 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;
+      box-sizing: border-box;
+    }
+    .form-input:focus,
+    .form-select:focus {
+      outline: none;
+      border-color: #C9A84C;
+      background: rgba(201,168,76,0.05);
+      box-shadow: 0 0 0 3px rgba(201,168,76,0.1);
+    }
+    .form-input.valid,   .form-select.valid   { border-color: rgba(37,211,102,0.5); }
+    .form-input.invalid, .form-select.invalid { border-color: rgba(220,38,38,0.7); background: rgba(220,38,38,0.04); }
+    .form-input::placeholder { color: #555; }
+
+    /* ── Phone group with +91 prefix ── */
+    .phone-group {
+      display: flex;
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 12px;
+      overflow: hidden;
+      background: rgba(255,255,255,0.03);
+      transition: border-color 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;
+    }
+    .phone-group:focus-within {
+      border-color: #C9A84C;
+      background: rgba(201,168,76,0.04);
+      box-shadow: 0 0 0 3px rgba(201,168,76,0.1);
+    }
+    .phone-group.valid   { border-color: rgba(37,211,102,0.5); }
+    .phone-group.invalid { border-color: rgba(220,38,38,0.7); background: rgba(220,38,38,0.04); }
+    .phone-prefix {
+      display: flex;
+      align-items: center;
+      padding: 0 0.85rem;
+      background: rgba(201,168,76,0.08);
+      border-right: 1px solid rgba(255,255,255,0.08);
+      color: #C9A84C;
+      font-family: 'Poppins', sans-serif;
+      font-size: 0.9rem;
+      font-weight: 600;
+      white-space: nowrap;
+      user-select: none;
+      letter-spacing: 0.02em;
+    }
+    .phone-input {
+      flex: 1;
+      background: transparent;
+      border: none;
+      outline: none;
+      padding: 0.9rem 1rem;
+      font-family: 'Poppins', sans-serif;
+      font-size: 0.9rem;
+      color: #F0ECE4;
+    }
+    .phone-input::placeholder { color: #555; }
+
+    /* ── Select ── */
+    .form-select {
+      cursor: pointer;
+      appearance: none;
+      background-image: url("data:image/svg+xml,%3Csvg width='12' height='8' viewBox='0 0 12 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1.5L6 6.5L11 1.5' stroke='%23C9A84C' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 1rem center;
+      background-size: 12px;
+      padding-right: 2.5rem;
+    }
+    .form-select option { background: #0F0F0F; color: #F0ECE4; }
+
+    /* ── Field errors ── */
+    .field-error {
+      display: none;
+      font-family: 'Poppins', sans-serif;
+      font-size: 0.76rem;
+      color: #f87171;
+      margin-top: 0.35rem;
+      padding-left: 0.2rem;
+    }
+    .field-error.show { display: block; animation: slideDown 0.25s ease; }
+
+    /* ── Submit button ── */
+    .form-submit-btn {
+      width: 100%;
+      background: linear-gradient(135deg, #C9A84C 0%, #d4aa55 50%, #C9A84C 100%);
+      background-size: 200% 100%;
+      color: #0F0F0F;
+      font-family: 'Poppins', sans-serif;
+      font-size: 0.95rem;
+      font-weight: 700;
+      padding: 1rem;
+      border: none;
+      border-radius: 50px;
+      cursor: pointer;
+      transition: all 0.35s cubic-bezier(0.25,0.46,0.45,0.94);
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      position: relative;
+      overflow: hidden;
+    }
+    .form-submit-btn::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: rgba(255,255,255,0);
+      transition: background 0.3s ease;
+      border-radius: inherit;
+    }
+    .form-submit-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 36px rgba(201,168,76,0.45);
+      background-position: 100% 0;
+    }
+    .form-submit-btn:active { transform: translateY(0); box-shadow: none; }
+    .form-submit-btn:disabled {
+      opacity: 0.5; cursor: not-allowed; transform: none; box-shadow: none;
+    }
+
+    /* ── Status banners ── */
+    .success-message {
+      display: none;
+      background: rgba(37,211,102,0.08);
+      border: 1px solid rgba(37,211,102,0.3);
+      border-radius: 14px;
+      padding: 1.1rem 1.25rem;
+      margin-bottom: 1.75rem;
+      color: #25D366;
+      font-size: 0.88rem;
+      font-family: 'Poppins', sans-serif;
+      display: none;
+      align-items: center;
+      gap: 10px;
+    }
+    .success-message.show { display: flex; animation: slideDown 0.4s ease; }
+    .error-message {
+      display: none;
+      background: rgba(220,38,38,0.08);
+      border: 1px solid rgba(220,38,38,0.3);
+      border-radius: 14px;
+      padding: 1.1rem 1.25rem;
+      margin-bottom: 1.75rem;
+      color: #f87171;
+      font-size: 0.88rem;
+      font-family: 'Poppins', sans-serif;
+      align-items: center;
+      gap: 10px;
+    }
+    .error-message.show { display: flex; animation: slideDown 0.4s ease; }
+
+    @keyframes slideDown {
+      from { opacity:0; transform: translateY(-8px); }
+      to   { opacity:1; transform: translateY(0); }
+    }
+
+    /* ── Spinner ── */
+    .btn-spinner {
+      display: inline-block;
+      width: 16px; height: 16px;
+      border: 2px solid rgba(15,15,15,0.25);
+      border-top-color: #0F0F0F;
+      border-radius: 50%;
+      animation: spin 0.65s linear infinite;
+      vertical-align: middle;
+      margin-right: 8px;
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+
+    /* ── Contact info cards ── */
+    .contact-info-card {
+      background: rgba(255,255,255,0.02);
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: 18px;
+      padding: 1.25rem 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      transition: border-color 0.35s ease, transform 0.35s ease, background 0.35s ease;
+      text-decoration: none;
+    }
+    .contact-info-card:hover {
+      border-color: rgba(201,168,76,0.2);
+      transform: translateX(5px);
+      background: rgba(201,168,76,0.025);
+    }
+    .contact-icon-wrapper {
+      width: 46px; height: 46px; min-width: 46px;
+      border-radius: 12px;
+      background: rgba(201,168,76,0.08);
+      border: 1px solid rgba(201,168,76,0.18);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.2rem;
+    }
+
+    /* ── Trust badge strip ── */
+    .trust-badge {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(255,255,255,0.02);
+      border: 1px solid rgba(255,255,255,0.05);
+      border-radius: 50px;
+      padding: 6px 14px;
+      font-family: 'Poppins', sans-serif;
+      font-size: 0.72rem;
+      color: #9A9A9A;
+    }
+    .trust-dot {
+      width: 6px; height: 6px; min-width: 6px;
+      border-radius: 50%;
+      background: #25D366;
+      animation: pulse-dot 2s infinite;
+    }
+    @keyframes pulse-dot {
+      0%,100% { opacity:1; transform:scale(1); }
+      50%      { opacity:0.6; transform:scale(1.4); }
+    }
+  </style>
+</head>
+
+<body class="bg-traaco-dark text-traaco-offwhite font-poppins overflow-x-hidden">
+
+  <!-- ============ NAVBAR ============ -->
+  <nav id="navbar">
+    <div class="nav-inner">
+      <a href="index.html" class="logo-text font-playfair font-bold text-traaco-offwhite">TRAACO</a>
+      <ul class="desktop-nav">
+        <li><a href="index.html" class="nav-link">Home</a></li>
+        <li><a href="index.html#services" class="nav-link">Services</a></li>
+        <li><a href="index.html#portfolio" class="nav-link">Portfolio</a></li>
+        <li><a href="index.html#pricing" class="nav-link">Pricing</a></li>
+        <li><a href="contact.html" class="nav-link active-nav">Contact</a></li>
+        <li><a href="contact.html" class="btn-gold nav-cta-btn">Book Now</a></li>
+      </ul>
+      <button id="menu-btn" class="hamburger-btn" aria-label="Toggle menu">
+        <span class="ham-line"></span>
+        <span class="ham-line"></span>
+        <span class="ham-line"></span>
+      </button>
+    </div>
+    <div id="mobile-menu" class="mobile-menu">
+      <div class="mobile-menu-inner">
+        <a href="index.html" class="mobile-nav-link">Home</a>
+        <a href="index.html#services" class="mobile-nav-link">Services</a>
+        <a href="index.html#portfolio" class="mobile-nav-link">Portfolio</a>
+        <a href="index.html#pricing" class="mobile-nav-link">Pricing</a>
+        <a href="contact.html" class="mobile-nav-link active-mobile">Contact</a>
+        <a href="contact.html" class="btn-gold mobile-cta-btn">Book Now</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ============ HERO ============ -->
+  <section class="relative pt-32 md:pt-40 pb-16 md:pb-20 overflow-hidden bg-traaco-bg">
+    <div class="noise-overlay absolute inset-0 opacity-10 pointer-events-none"></div>
+    <div class="section-container relative z-10">
+      <div class="mb-6" data-aos="fade-right">
+        <div class="flex items-center gap-2 text-xs text-traaco-gray">
+          <a href="index.html" class="hover:text-traaco-gold transition-colors">Home</a>
+          <span>/</span>
+          <span class="text-traaco-gold">Contact</span>
+        </div>
+      </div>
+      <div class="text-center mb-10 md:mb-16">
+        <div class="inline-flex items-center gap-2 mb-5" data-aos="fade-up">
+          <span class="w-8 h-px bg-traaco-gold"></span>
+          <span class="text-traaco-gold text-xs font-poppins uppercase tracking-widest font-medium">Get in Touch</span>
+          <span class="w-8 h-px bg-traaco-gold"></span>
+        </div>
+        <h1 class="font-playfair text-4xl md:text-5xl lg:text-6xl font-bold text-traaco-offwhite mb-5" data-aos="fade-up" data-aos-delay="100">
+          Let's Build Something<br /><span class="text-traaco-gold italic">Extraordinary</span>
+        </h1>
+        <p class="text-traaco-gray text-sm md:text-base max-w-xl mx-auto leading-relaxed mb-8" data-aos="fade-up" data-aos-delay="200">
+          Fill out the form and we'll get back to you within 24 hours with a custom quote tailored to your business.
+        </p>
+        <!-- Trust badges -->
+        <div class="flex flex-wrap justify-center gap-3" data-aos="fade-up" data-aos-delay="300">
+          <div class="trust-badge"><div class="trust-dot"></div> Response within 24 hrs</div>
+          <div class="trust-badge">🔒 100% confidential</div>
+          <div class="trust-badge">✨ Free consultation</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CONTACT SECTION ============ -->
+  <section class="section-pad bg-traaco-dark relative">
+    <div class="section-container">
+      <div class="grid grid-cols-1 lg:grid-cols-5 gap-10 lg:gap-16">
+
+        <!-- ===== CONTACT FORM ===== -->
+        <div class="lg:col-span-3" data-aos="fade-up">
+          <div class="contact-form-container">
+
+            <!-- Success banner -->
+            <div id="successMessage" class="success-message" role="alert" aria-live="polite">
+              <span style="font-size:1.3rem">✓</span>
+              <span>Thank you! We've received your message and will reply within 24 hours.</span>
+            </div>
+            <!-- Error banner -->
+            <div id="errorMessage" class="error-message" role="alert" aria-live="polite">
+              <span style="font-size:1.2rem">✗</span>
+              <span>Something went wrong. Please try again or reach us on WhatsApp.</span>
+            </div>
+
+            <form id="contactForm" novalidate>
+
+              <!-- ── Name ── -->
+              <div class="form-group">
+                <label for="name" class="form-label">Your Name <span class="required">*</span></label>
+                <input
+                  type="text" id="name" name="name"
+                  class="form-input"
+                  placeholder="e.g. Arjun Sharma"
+                  autocomplete="name"
+                />
+                <span class="field-error" id="nameError">Please enter your full name (min. 2 characters).</span>
+              </div>
+
+              <!-- ── Email ── -->
+              <div class="form-group">
+                <label for="email" class="form-label">Email Address <span class="required">*</span></label>
+                <input
+                  type="email" id="email" name="email"
+                  class="form-input"
+                  placeholder="you@example.com"
+                  autocomplete="email"
+                />
+                <span class="field-error" id="emailError">Please enter a valid email address.</span>
+              </div>
+
+              <!-- ── Phone with +91 prefix ── -->
+              <div class="form-group">
+                <label for="phone" class="form-label">Phone Number <span class="required">*</span></label>
+                <div class="phone-group" id="phoneGroup">
+                  <div class="phone-prefix">🇮🇳 +91</div>
+                  <input
+                    type="tel" id="phone" name="phone"
+                    class="phone-input"
+                    placeholder="98765 43210"
+                    autocomplete="tel"
+                    maxlength="10"
+                    inputmode="numeric"
+                  />
+                </div>
+                <span class="field-error" id="phoneError">Enter a valid 10-digit Indian mobile number.</span>
+              </div>
+
+              <!-- ── Package ── -->
+              <div class="form-group">
+                <label for="project" class="form-label">Select Package <span class="required">*</span></label>
+                <select id="project" name="project" class="form-select">
+                  <option value="">Choose a package…</option>
+                  <option value="Small Business Website - ₹1999">Small Business Website — ₹1,999</option>
+                  <option value="Smart Dynamic Website - ₹3499">Smart Dynamic Website — ₹3,499</option>
+                  <option value="Business Website - ₹4999">Business Website — ₹4,999</option>
+                  <option value="Premium Dynamic Business Website - ₹9999">Premium Dynamic Business Website — ₹9,999</option>
+                  <option value="Custom Business Website (Get Quote)">Custom Business Website (Get Quote)</option>
+                </select>
+                <span class="field-error" id="projectError">Please select a package.</span>
+              </div>
+
+              <!-- ── Timeline ── -->
+              <div class="form-group">
+                <label for="timeline" class="form-label">Project Timeline <span class="required">*</span></label>
+                <select id="timeline" name="timeline" class="form-select">
+                  <option value="">Choose timeline…</option>
+                  <option value="One Week">One Week</option>
+                  <option value="Two Weeks">Two Weeks</option>
+                  <option value="Three Weeks">Three Weeks</option>
+                  <option value="More than 3 Weeks">More than 3 Weeks</option>
+                </select>
+                <span class="field-error" id="timelineError">Please select a project timeline.</span>
+              </div>
+
+              <button type="submit" id="submitBtn" class="form-submit-btn mt-2">
+                Send Message ✦
+              </button>
+
+              <p class="text-center text-xs text-traaco-gray mt-4" style="line-height:1.6;">
+                By submitting, you agree to be contacted about your project. No spam, ever.
+              </p>
+
+            </form>
+          </div>
+        </div>
+
+        <!-- ===== CONTACT INFO ===== -->
+        <div class="lg:col-span-2" data-aos="fade-up" data-aos-delay="100">
+          <div class="space-y-4">
+            <div class="mb-6">
+              <h3 class="font-playfair text-2xl md:text-3xl font-bold text-traaco-offwhite mb-3">Contact Information</h3>
+              <p class="text-traaco-gray text-sm leading-relaxed">
+                Prefer to reach out directly? Use any of the channels below — we're always happy to chat.
+              </p>
+            </div>
+
+            <a href="mailto:contact@traaco.in" class="contact-info-card">
+              <div class="contact-icon-wrapper">📧</div>
+              <div>
+                <div class="text-xs text-traaco-gray uppercase tracking-wider mb-1">Email</div>
+                <div class="text-sm font-semibold text-traaco-offwhite">contact@traaco.in</div>
+              </div>
+            </a>
+
+            <a href="https://wa.me/919999999999" target="_blank" rel="noopener" class="contact-info-card">
+              <div class="contact-icon-wrapper">💬</div>
+              <div>
+                <div class="text-xs text-traaco-gray uppercase tracking-wider mb-1">WhatsApp</div>
+                <div class="text-sm font-semibold text-traaco-offwhite">+91 99999 99999</div>
+              </div>
+            </a>
+
+            <div class="contact-info-card">
+              <div class="contact-icon-wrapper">📍</div>
+              <div>
+                <div class="text-xs text-traaco-gray uppercase tracking-wider mb-1">Location</div>
+                <div class="text-sm font-semibold text-traaco-offwhite">Hyderabad, India</div>
+              </div>
+            </div>
+
+            <div class="contact-info-card">
+              <div class="contact-icon-wrapper">⏰</div>
+              <div>
+                <div class="text-xs text-traaco-gray uppercase tracking-wider mb-1">Response Time</div>
+                <div class="text-sm font-semibold text-traaco-offwhite">Within 24 Hours</div>
+              </div>
+            </div>
+
+            <!-- Social -->
+            <div class="pt-4">
+              <p class="text-xs text-traaco-gray uppercase tracking-wider mb-4">Follow Us</p>
+              <div class="flex gap-4">
+                <a href="#" class="social-icon" aria-label="Instagram">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="18" height="18">
+                    <rect x="2" y="2" width="20" height="20" rx="5"/>
+                    <circle cx="12" cy="12" r="4"/>
+                    <circle cx="17.5" cy="6.5" r="0.5" fill="currentColor"/>
+                  </svg>
+                </a>
+                <a href="#" class="social-icon" aria-label="LinkedIn">
+                  <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18">
+                    <path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/>
+                    <circle cx="4" cy="4" r="2"/>
+                  </svg>
+                </a>
+                <a href="https://wa.me/919999999999" class="social-icon" aria-label="WhatsApp" target="_blank" rel="noopener">
+                  <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18">
+                    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="bg-traaco-dark border-t border-white/5 py-12 md:py-16">
+    <div class="section-container">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12 mb-10 md:mb-12">
+        <div class="col-span-2 md:col-span-1">
+          <a href="index.html" class="logo-text text-2xl font-playfair font-bold text-traaco-offwhite tracking-wider">TRAACO</a>
+          <p class="text-traaco-gray text-sm leading-relaxed mt-4 max-w-xs">Premium digital studio crafting cinematic web experiences for hospitality &amp; food businesses.</p>
+          <div class="flex gap-4 mt-5">
+            <a href="#" class="social-icon" aria-label="Instagram">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="18" height="18">
+                <rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.5" fill="currentColor"/>
+              </svg>
+            </a>
+            <a href="#" class="social-icon" aria-label="LinkedIn">
+              <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18">
+                <path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/>
+              </svg>
+            </a>
+            <a href="https://wa.me/919999999999" class="social-icon" aria-label="WhatsApp" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+            </a>
+          </div>
+        </div>
+        <div>
+          <h5 class="footer-heading">Quick Links</h5>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="index.html#services">Services</a></li>
+            <li><a href="index.html#portfolio">Portfolio</a></li>
+            <li><a href="index.html#pricing">Pricing</a></li>
+          </ul>
+        </div>
+        <div>
+          <h5 class="footer-heading">Services</h5>
+          <ul class="footer-links">
+            <li><a href="index.html#services">Web Development</a></li>
+            <li><a href="index.html#services">Business Branding</a></li>
+            <li><a href="index.html#services">Digital Design</a></li>
+            <li><a href="rest.html">Restaurant Sites</a></li>
+          </ul>
+        </div>
+        <div>
+          <h5 class="footer-heading">Contact</h5>
+          <ul class="footer-links">
+            <li><a href="mailto:contact@traaco.in">contact@traaco.in</a></li>
+            <li><a href="https://wa.me/919999999999" target="_blank">+91 99999 99999</a></li>
+            <li><a href="#">Hyderabad, India</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="border-t border-white/5 pt-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-traaco-gray text-xs">
+        <p>© 2025 TRAACO. All rights reserved.</p>
+        <p>Crafted with ♥ for premium brands</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ============ FLOATING WHATSAPP ============ -->
+  <a href="https://wa.me/919999999999" target="_blank" rel="noopener" class="whatsapp-float" aria-label="Chat on WhatsApp">
+    <svg viewBox="0 0 24 24" fill="currentColor" width="26" height="26">
+      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+    </svg>
+    <span class="whatsapp-pulse"></span>
+  </a>
+
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script src="js/script.js"></script>
+
+  <!-- ============ CONTACT FORM SCRIPT ============ -->
+  <script>
+    // ── YOUR DEPLOYED APPS SCRIPT WEB APP URL ────────────────────────────────
+    const SHEET_URL = 'https://script.google.com/macros/s/AKfycbyGiDHcA9xPI_Nf9Xaoe_FoI9cSLHHMkpIqnLWMBngImXRoucqJdKbB8jlTOaMeEDym/exec';
+
+    // ── ELEMENT REFS ─────────────────────────────────────────────────────────
+    const nameEl     = document.getElementById('name');
+    const emailEl    = document.getElementById('email');
+    const phoneEl    = document.getElementById('phone');
+    const phoneGroup = document.getElementById('phoneGroup');
+    const projectEl  = document.getElementById('project');
+    const timelineEl = document.getElementById('timeline');
+
+    // ── VALIDATION HELPERS ───────────────────────────────────────────────────
+    function isValidName(v)   { return v.trim().length >= 2; }
+    function isValidEmail(v)  { return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v.trim()); }
+    // 10-digit Indian mobile: starts with 6,7,8, or 9
+    function isValidPhone(v)  { return /^[6-9]\d{9}$/.test(v.trim()); }
+    function isValidSelect(v) { return v !== ''; }
+
+    // ── SET FIELD VISUAL STATE ───────────────────────────────────────────────
+    // For regular inputs/selects
+    function setInputState(el, errorEl, isValid) {
+      el.classList.toggle('valid',   isValid);
+      el.classList.toggle('invalid', !isValid);
+      errorEl.classList.toggle('show', !isValid);
+    }
+    // For the phone group wrapper (not the input itself)
+    function setPhoneState(isValid) {
+      phoneGroup.classList.toggle('valid',   isValid);
+      phoneGroup.classList.toggle('invalid', !isValid);
+      document.getElementById('phoneError').classList.toggle('show', !isValid);
+    }
+
+    // ── VALIDATE ALL ─────────────────────────────────────────────────────────
+    function validateAll() {
+      const v1 = isValidName(nameEl.value);
+      const v2 = isValidEmail(emailEl.value);
+      const v3 = isValidPhone(phoneEl.value);
+      const v4 = isValidSelect(projectEl.value);
+      const v5 = isValidSelect(timelineEl.value);
+
+      setInputState(nameEl,     document.getElementById('nameError'),     v1);
+      setInputState(emailEl,    document.getElementById('emailError'),    v2);
+      setPhoneState(v3);
+      setInputState(projectEl,  document.getElementById('projectError'),  v4);
+      setInputState(timelineEl, document.getElementById('timelineError'), v5);
+
+      return v1 && v2 && v3 && v4 && v5;
+    }
+
+    // ── LIVE VALIDATION (on blur) ────────────────────────────────────────────
+    nameEl.addEventListener('blur', () =>
+      setInputState(nameEl, document.getElementById('nameError'), isValidName(nameEl.value)));
+
+    emailEl.addEventListener('blur', () =>
+      setInputState(emailEl, document.getElementById('emailError'), isValidEmail(emailEl.value)));
+
+    phoneEl.addEventListener('blur', () => setPhoneState(isValidPhone(phoneEl.value)));
+
+    projectEl.addEventListener('change', () =>
+      setInputState(projectEl, document.getElementById('projectError'), isValidSelect(projectEl.value)));
+
+    timelineEl.addEventListener('change', () =>
+      setInputState(timelineEl, document.getElementById('timelineError'), isValidSelect(timelineEl.value)));
+
+    // ── PHONE: digits only, max 10 ────────────────────────────────────────────
+    phoneEl.addEventListener('input', function () {
+      // Strip anything that isn't a digit
+      this.value = this.value.replace(/\D/g, '').slice(0, 10);
+    });
+
+    // ── FORM SUBMIT ──────────────────────────────────────────────────────────
+    document.getElementById('contactForm').addEventListener('submit', async function (e) {
+      e.preventDefault();
+
+      const submitBtn      = document.getElementById('submitBtn');
+      const successMessage = document.getElementById('successMessage');
+      const errorMessage   = document.getElementById('errorMessage');
+
+      // Reset banners
+      successMessage.classList.remove('show');
+      errorMessage.classList.remove('show');
+
+      // Validate
+      if (!validateAll()) {
+        // Scroll to first invalid element
+        const firstInvalid = this.querySelector('.invalid, .phone-group.invalid');
+        if (firstInvalid) firstInvalid.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        return;
+      }
+
+      // Build payload — keys must match your Apps Script exactly
+      const payload = {
+        name:     nameEl.value.trim(),
+        mail:     emailEl.value.trim().toLowerCase(),
+        phone:    '+91' + phoneEl.value.trim(),   // stored as +91XXXXXXXXXX
+        project:  projectEl.value,
+        timeline: timelineEl.value
+      };
+
+      // Loading state
+      submitBtn.disabled  = true;
+      submitBtn.innerHTML = '<span class="btn-spinner"></span>Sending…';
+
+      try {
+        /*
+         * IMPORTANT: Do NOT set Content-Type header.
+         * Google Apps Script cannot handle the OPTIONS preflight triggered
+         * by a custom Content-Type. Omitting it keeps this a "simple request"
+         * which goes straight through — no preflight needed.
+         */
+        const response = await fetch(SHEET_URL, {
+          method: 'POST',
+          body:   JSON.stringify(payload)
+          // ← intentionally no headers
+        });
+
+        // Apps Script always returns 200; read body to check status
+        const text   = await response.text();
+        const result = JSON.parse(text);
+
+        if (result.status === 'success') {
+          successMessage.classList.add('show');
+          successMessage.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+          this.reset();
+          // Clear validation states
+          [nameEl, emailEl, projectEl, timelineEl].forEach(el =>
+            el.classList.remove('valid', 'invalid'));
+          phoneGroup.classList.remove('valid', 'invalid');
+          this.querySelectorAll('.field-error').forEach(el => el.classList.remove('show'));
+        } else {
+          console.error('Apps Script error:', result.message);
+          errorMessage.classList.add('show');
+        }
+
+      } catch (err) {
+        console.error('Fetch error:', err);
+        errorMessage.classList.add('show');
+      } finally {
+        submitBtn.disabled  = false;
+        submitBtn.innerHTML = 'Send Message ✦';
+      }
+    });
+  </script>
+
+</body>
+</html>

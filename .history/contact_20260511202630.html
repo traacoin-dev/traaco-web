@@ -1,0 +1,1069 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Contact — TRAACO</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+    }
+
+    body{
+      font-family:'Poppins',sans-serif;
+      background:#0f0f0f;
+      color:#fff;
+      overflow-x:hidden;
+    }
+
+    :root{
+      --gold:#C9A84C;
+      --offwhite:#F0ECE4;
+      --gray:#9A9A9A;
+      --surface:#151515;
+    }
+
+    /* =========================
+       NAVBAR
+    ========================= */
+
+    nav{
+      position:fixed;
+      top:0;
+      left:0;
+      width:100%;
+      z-index:999;
+      background:rgba(10,10,10,0.85);
+      backdrop-filter:blur(14px);
+      border-bottom:1px solid rgba(255,255,255,0.05);
+    }
+
+    .nav-container{
+      width:min(1180px,92%);
+      margin:auto;
+      height:78px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+    }
+
+    .logo{
+      font-family:'Playfair Display',serif;
+      font-size:2rem;
+      font-weight:700;
+      color:var(--offwhite);
+      letter-spacing:2px;
+      text-decoration:none;
+    }
+
+    .nav-links{
+      display:flex;
+      gap:34px;
+      align-items:center;
+    }
+
+    .nav-links a{
+      text-decoration:none;
+      color:var(--offwhite);
+      font-size:0.95rem;
+      transition:0.3s;
+    }
+
+    .nav-links a:hover{
+      color:var(--gold);
+    }
+
+    .nav-btn{
+      padding:12px 24px;
+      border-radius:999px;
+      background:var(--gold);
+      color:#111 !important;
+      font-weight:600;
+    }
+
+    /* =========================
+       HERO
+    ========================= */
+
+    .hero{
+      padding-top:160px;
+      padding-bottom:80px;
+      text-align:center;
+      position:relative;
+      overflow:hidden;
+      background:
+      radial-gradient(circle at top right, rgba(201,168,76,0.12), transparent 30%),
+      #111111;
+    }
+
+    .hero-tag{
+      color:var(--gold);
+      text-transform:uppercase;
+      letter-spacing:4px;
+      font-size:0.75rem;
+      margin-bottom:20px;
+      font-weight:600;
+    }
+
+    .hero h1{
+      font-family:'Playfair Display',serif;
+      font-size:clamp(2.7rem,6vw,5rem);
+      line-height:1.1;
+      margin-bottom:24px;
+    }
+
+    .hero h1 span{
+      color:var(--gold);
+      font-style:italic;
+    }
+
+    .hero p{
+      max-width:700px;
+      margin:auto;
+      color:var(--gray);
+      line-height:1.8;
+      font-size:1rem;
+    }
+
+    /* =========================
+       CONTACT SECTION
+    ========================= */
+
+    .contact-section{
+      padding:70px 0 100px;
+    }
+
+    .container{
+      width:min(1180px,92%);
+      margin:auto;
+    }
+
+    .contact-grid{
+      display:grid;
+      grid-template-columns:1.2fr 0.8fr;
+      gap:50px;
+    }
+
+    .contact-card{
+      background:rgba(255,255,255,0.03);
+      border:1px solid rgba(255,255,255,0.08);
+      border-radius:28px;
+      padding:40px;
+      transition:0.4s ease;
+    }
+
+    .contact-card:hover{
+      border-color:rgba(201,168,76,0.2);
+      box-shadow:0 20px 60px rgba(0,0,0,0.45);
+    }
+
+    .form-title{
+      font-size:2rem;
+      margin-bottom:10px;
+      font-family:'Playfair Display',serif;
+    }
+
+    .form-sub{
+      color:var(--gray);
+      margin-bottom:36px;
+      line-height:1.7;
+    }
+
+    .form-group{
+      margin-bottom:24px;
+    }
+
+    .form-label{
+      display:block;
+      margin-bottom:10px;
+      font-size:0.92rem;
+      font-weight:600;
+      color:var(--offwhite);
+    }
+
+    .required{
+      color:var(--gold);
+    }
+
+    .form-input,
+    .form-select{
+      width:100%;
+      background:rgba(255,255,255,0.03);
+      border:1px solid rgba(255,255,255,0.08);
+      border-radius:14px;
+      padding:16px 18px;
+      color:var(--offwhite);
+      font-size:0.95rem;
+      transition:0.3s;
+      outline:none;
+    }
+
+    .form-input::placeholder{
+      color:#777;
+    }
+
+    .form-input:focus,
+    .form-select:focus{
+      border-color:var(--gold);
+      background:rgba(201,168,76,0.04);
+      box-shadow:0 0 0 3px rgba(201,168,76,0.12);
+    }
+
+    .form-select{
+      appearance:none;
+      cursor:pointer;
+    }
+
+    /* PHONE */
+
+    .phone-wrapper{
+      display:flex;
+      align-items:center;
+      background:rgba(255,255,255,0.03);
+      border:1px solid rgba(255,255,255,0.08);
+      border-radius:14px;
+      overflow:hidden;
+      transition:0.3s;
+    }
+
+    .phone-wrapper:focus-within{
+      border-color:var(--gold);
+      background:rgba(201,168,76,0.04);
+      box-shadow:0 0 0 3px rgba(201,168,76,0.12);
+    }
+
+    .country-code{
+      padding:0 18px;
+      color:var(--gold);
+      font-weight:600;
+      border-right:1px solid rgba(255,255,255,0.08);
+      height:54px;
+      display:flex;
+      align-items:center;
+    }
+
+    .phone-input{
+      border:none !important;
+      background:transparent !important;
+      box-shadow:none !important;
+    }
+
+    /* VALID */
+
+    .valid{
+      border-color:#22c55e !important;
+    }
+
+    .invalid{
+      border-color:#ef4444 !important;
+    }
+
+    .field-error{
+      display:none;
+      color:#f87171;
+      font-size:0.8rem;
+      margin-top:8px;
+      padding-left:4px;
+    }
+
+    .field-error.show{
+      display:block;
+    }
+
+    /* BUTTON */
+
+    .submit-btn{
+      width:100%;
+      padding:17px;
+      border:none;
+      border-radius:999px;
+      background:var(--gold);
+      color:#111;
+      font-weight:700;
+      cursor:pointer;
+      font-size:1rem;
+      transition:0.35s;
+      margin-top:10px;
+    }
+
+    .submit-btn:hover{
+      transform:translateY(-2px);
+      box-shadow:0 14px 34px rgba(201,168,76,0.4);
+    }
+
+    .submit-btn:disabled{
+      opacity:0.6;
+      cursor:not-allowed;
+    }
+
+    /* SUCCESS */
+
+    .success-message,
+    .error-message{
+      display:none;
+      padding:16px;
+      border-radius:14px;
+      margin-bottom:24px;
+      font-size:0.92rem;
+      line-height:1.6;
+    }
+
+    .success-message{
+      background:rgba(34,197,94,0.1);
+      border:1px solid rgba(34,197,94,0.3);
+      color:#22c55e;
+    }
+
+    .error-message{
+      background:rgba(239,68,68,0.1);
+      border:1px solid rgba(239,68,68,0.3);
+      color:#ef4444;
+    }
+
+    .show{
+      display:block;
+    }
+
+    /* CONTACT INFO */
+
+    .info-card{
+      background:rgba(255,255,255,0.03);
+      border:1px solid rgba(255,255,255,0.08);
+      border-radius:22px;
+      padding:28px;
+      margin-bottom:20px;
+      transition:0.35s;
+    }
+
+    .info-card:hover{
+      border-color:rgba(201,168,76,0.25);
+      transform:translateY(-3px);
+    }
+
+    .info-title{
+      color:var(--gold);
+      font-size:0.82rem;
+      text-transform:uppercase;
+      letter-spacing:2px;
+      margin-bottom:10px;
+    }
+
+    .info-value{
+      color:var(--offwhite);
+      font-size:1rem;
+      line-height:1.6;
+    }
+
+    .info-value a{
+      color:var(--offwhite);
+      text-decoration:none;
+    }
+
+    /* FOOTER */
+
+    footer{
+      border-top:1px solid rgba(255,255,255,0.05);
+      padding:30px 0;
+      text-align:center;
+      color:#777;
+      font-size:0.9rem;
+    }
+
+    /* MOBILE */
+
+    @media(max-width:980px){
+
+      .contact-grid{
+        grid-template-columns:1fr;
+      }
+
+      .hero{
+        padding-top:140px;
+      }
+
+      .contact-card{
+        padding:28px;
+      }
+
+      .nav-links{
+        display:none;
+      }
+
+    }
+
+  </style>
+
+</head>
+
+<body>
+
+  <!-- =========================
+       NAVBAR
+  ========================== -->
+
+  <nav>
+
+    <div class="nav-container">
+
+      <a href="index.html" class="logo">TRAACO</a>
+
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="index.html#services">Services</a>
+        <a href="index.html#portfolio">Portfolio</a>
+        <a href="contact.html" class="nav-btn">Book Now</a>
+      </div>
+
+    </div>
+
+  </nav>
+
+  <!-- =========================
+       HERO
+  ========================== -->
+
+  <section class="hero">
+
+    <div class="container">
+
+      <div class="hero-tag">
+        CONTACT US
+      </div>
+
+      <h1>
+        Let's Build Something
+        <br>
+        <span>Extraordinary</span>
+      </h1>
+
+      <p>
+        Fill out the form below and we’ll get back to you within 24 hours
+        with a premium custom website solution for your business.
+      </p>
+
+    </div>
+
+  </section>
+
+  <!-- =========================
+       CONTACT
+  ========================== -->
+
+  <section class="contact-section">
+
+    <div class="container">
+
+      <div class="contact-grid">
+
+        <!-- FORM -->
+
+        <div class="contact-card">
+
+          <h2 class="form-title">
+            Book Your Website
+          </h2>
+
+          <p class="form-sub">
+            Share your business details and preferred package.
+            We'll contact you shortly with next steps.
+          </p>
+
+          <div id="successMessage" class="success-message">
+            ✅ Message sent successfully. We’ll contact you within 24 hours.
+          </div>
+
+          <div id="errorMessage" class="error-message">
+            ❌ Something went wrong. Please try again.
+          </div>
+
+          <form id="contactForm">
+
+            <!-- NAME -->
+
+            <div class="form-group">
+
+              <label class="form-label">
+                Full Name <span class="required">*</span>
+              </label>
+
+              <input
+                type="text"
+                id="name"
+                class="form-input"
+                placeholder="Enter your full name"
+              >
+
+              <div class="field-error" id="nameError">
+                Please enter valid name
+              </div>
+
+            </div>
+
+            <!-- EMAIL -->
+
+            <div class="form-group">
+
+              <label class="form-label">
+                Email Address <span class="required">*</span>
+              </label>
+
+              <input
+                type="email"
+                id="email"
+                class="form-input"
+                placeholder="yourmail@gmail.com"
+              >
+
+              <div class="field-error" id="emailError">
+                Please enter valid email
+              </div>
+
+            </div>
+
+            <!-- PHONE -->
+
+            <div class="form-group">
+
+              <label class="form-label">
+                Phone Number <span class="required">*</span>
+              </label>
+
+              <div class="phone-wrapper">
+
+                <span class="country-code">
+                  +91
+                </span>
+
+                <input
+                  type="tel"
+                  id="phone"
+                  class="form-input phone-input"
+                  placeholder="9876543210"
+                  maxlength="10"
+                  inputmode="numeric"
+                >
+
+              </div>
+
+              <div class="field-error" id="phoneError">
+                Please enter valid mobile number
+              </div>
+
+            </div>
+
+            <!-- PACKAGE -->
+
+            <div class="form-group">
+
+              <label class="form-label">
+                Select Package <span class="required">*</span>
+              </label>
+
+              <select id="project" class="form-select">
+
+                <option value="">
+                  Choose Package
+                </option>
+
+                <option value="Small Business Website - ₹1999">
+                  Small Business Website - ₹1999
+                </option>
+
+                <option value="Smart Dynamic Website - ₹3499">
+                  Smart Dynamic Website - ₹3499
+                </option>
+
+                <option value="Business Website - ₹4999">
+                  Business Website - ₹4999
+                </option>
+
+                <option value="Premium Dynamic Business Website - ₹9999">
+                  Premium Dynamic Business Website - ₹9999
+                </option>
+
+                <option value="Custom Website">
+                  Custom Website
+                </option>
+
+              </select>
+
+              <div class="field-error" id="projectError">
+                Please select package
+              </div>
+
+            </div>
+
+            <!-- TIMELINE -->
+
+            <div class="form-group">
+
+              <label class="form-label">
+                Project Timeline <span class="required">*</span>
+              </label>
+
+              <select id="timeline" class="form-select">
+
+                <option value="">
+                  Choose Timeline
+                </option>
+
+                <option value="One Week">
+                  One Week
+                </option>
+
+                <option value="Two Weeks">
+                  Two Weeks
+                </option>
+
+                <option value="Three Weeks">
+                  Three Weeks
+                </option>
+
+                <option value="More Than 3 Weeks">
+                  More Than 3 Weeks
+                </option>
+
+              </select>
+
+              <div class="field-error" id="timelineError">
+                Please select timeline
+              </div>
+
+            </div>
+
+            <button type="submit" class="submit-btn" id="submitBtn">
+              Send Message
+            </button>
+
+          </form>
+
+        </div>
+
+        <!-- CONTACT INFO -->
+
+        <div>
+
+          <div class="info-card">
+
+            <div class="info-title">
+              Email
+            </div>
+
+            <div class="info-value">
+              <a href="mailto:contact@traaco.in">
+                contact@traaco.in
+              </a>
+            </div>
+
+          </div>
+
+          <div class="info-card">
+
+            <div class="info-title">
+              WhatsApp
+            </div>
+
+            <div class="info-value">
+              <a href="https://wa.me/919999999999" target="_blank">
+                +91 99999 99999
+              </a>
+            </div>
+
+          </div>
+
+          <div class="info-card">
+
+            <div class="info-title">
+              Location
+            </div>
+
+            <div class="info-value">
+              Hyderabad, India
+            </div>
+
+          </div>
+
+          <div class="info-card">
+
+            <div class="info-title">
+              Response Time
+            </div>
+
+            <div class="info-value">
+              Within 24 Hours
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- =========================
+       FOOTER
+  ========================== -->
+
+  <footer>
+
+    © 2026 TRAACO — Premium Digital Studio
+
+  </footer>
+
+  <!-- =========================
+       SCRIPT
+  ========================== -->
+
+  <script>
+
+    // ============================
+    // YOUR GOOGLE APPS SCRIPT URL
+    // ============================
+
+    const SHEET_URL =
+      "PASTE_YOUR_WEB_APP_URL_HERE";
+
+
+
+    // ============================
+    // VALIDATIONS
+    // ============================
+
+    function isValidName(value){
+      return value.trim().length >= 2;
+    }
+
+    function isValidEmail(value){
+      return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value.trim());
+    }
+
+    function isValidPhone(value){
+      return /^[6-9]\d{9}$/.test(value.trim());
+    }
+
+    function isValidSelect(value){
+      return value !== "";
+    }
+
+
+
+    // ============================
+    // FIELD STATES
+    // ============================
+
+    function setFieldState(input,error,isValid){
+
+      input.classList.toggle("valid",isValid);
+      input.classList.toggle("invalid",!isValid);
+
+      error.classList.toggle("show",!isValid);
+
+    }
+
+
+
+    // ============================
+    // VALIDATE ALL
+    // ============================
+
+    function validateAll(){
+
+      const name = document.getElementById("name");
+      const email = document.getElementById("email");
+      const phone = document.getElementById("phone");
+      const project = document.getElementById("project");
+      const timeline = document.getElementById("timeline");
+
+      const validName = isValidName(name.value);
+      const validEmail = isValidEmail(email.value);
+      const validPhone = isValidPhone(phone.value);
+      const validProject = isValidSelect(project.value);
+      const validTimeline = isValidSelect(timeline.value);
+
+      setFieldState(
+        name,
+        document.getElementById("nameError"),
+        validName
+      );
+
+      setFieldState(
+        email,
+        document.getElementById("emailError"),
+        validEmail
+      );
+
+      setFieldState(
+        phone,
+        document.getElementById("phoneError"),
+        validPhone
+      );
+
+      setFieldState(
+        project,
+        document.getElementById("projectError"),
+        validProject
+      );
+
+      setFieldState(
+        timeline,
+        document.getElementById("timelineError"),
+        validTimeline
+      );
+
+      return (
+        validName &&
+        validEmail &&
+        validPhone &&
+        validProject &&
+        validTimeline
+      );
+
+    }
+
+
+
+    // ============================
+    // LIVE VALIDATION
+    // ============================
+
+    document.getElementById("name").addEventListener("blur",function(){
+
+      setFieldState(
+        this,
+        document.getElementById("nameError"),
+        isValidName(this.value)
+      );
+
+    });
+
+    document.getElementById("email").addEventListener("blur",function(){
+
+      setFieldState(
+        this,
+        document.getElementById("emailError"),
+        isValidEmail(this.value)
+      );
+
+    });
+
+    document.getElementById("phone").addEventListener("blur",function(){
+
+      setFieldState(
+        this,
+        document.getElementById("phoneError"),
+        isValidPhone(this.value)
+      );
+
+    });
+
+    document.getElementById("project").addEventListener("change",function(){
+
+      setFieldState(
+        this,
+        document.getElementById("projectError"),
+        isValidSelect(this.value)
+      );
+
+    });
+
+    document.getElementById("timeline").addEventListener("change",function(){
+
+      setFieldState(
+        this,
+        document.getElementById("timelineError"),
+        isValidSelect(this.value)
+      );
+
+    });
+
+
+
+    // ============================
+    // PHONE ONLY NUMBERS
+    // ============================
+
+    document.getElementById("phone").addEventListener("input",function(){
+
+      this.value = this.value.replace(/\D/g,"");
+
+      if(this.value.length > 10){
+        this.value = this.value.slice(0,10);
+      }
+
+    });
+
+
+
+    // ============================
+    // FORM SUBMIT
+    // ============================
+
+    document.getElementById("contactForm")
+    .addEventListener("submit",async function(e){
+
+      e.preventDefault();
+
+      const successMessage =
+        document.getElementById("successMessage");
+
+      const errorMessage =
+        document.getElementById("errorMessage");
+
+      const submitBtn =
+        document.getElementById("submitBtn");
+
+      successMessage.classList.remove("show");
+      errorMessage.classList.remove("show");
+
+
+
+      if(!validateAll()){
+
+        const firstInvalid =
+          document.querySelector(".invalid");
+
+        if(firstInvalid){
+
+          firstInvalid.scrollIntoView({
+            behavior:"smooth",
+            block:"center"
+          });
+
+        }
+
+        return;
+
+      }
+
+
+
+      // ============================
+      // PAYLOAD
+      // ============================
+
+      const payload = {
+
+        name:
+          document.getElementById("name").value.trim(),
+
+        mail:
+          document.getElementById("email").value.trim(),
+
+        phone:
+          document.getElementById("phone").value.trim(),
+
+        project:
+          document.getElementById("project").value,
+
+        timeline:
+          document.getElementById("timeline").value
+
+      };
+
+
+
+      // ============================
+      // LOADING
+      // ============================
+
+      submitBtn.disabled = true;
+      submitBtn.innerHTML = "Sending...";
+
+
+
+      try{
+
+        const response = await fetch(SHEET_URL,{
+
+          method:"POST",
+
+          body:JSON.stringify(payload)
+
+        });
+
+        const text = await response.text();
+
+        const result = JSON.parse(text);
+
+
+
+        if(result.status === "success"){
+
+          successMessage.classList.add("show");
+
+          this.reset();
+
+          document
+          .querySelectorAll(".form-input,.form-select")
+          .forEach(el=>{
+
+            el.classList.remove("valid");
+            el.classList.remove("invalid");
+
+          });
+
+          document
+          .querySelectorAll(".field-error")
+          .forEach(el=>{
+
+            el.classList.remove("show");
+
+          });
+
+          successMessage.scrollIntoView({
+            behavior:"smooth"
+          });
+
+        }
+
+        else{
+
+          errorMessage.classList.add("show");
+
+        }
+
+      }
+
+      catch(error){
+
+        console.log(error);
+
+        errorMessage.classList.add("show");
+
+      }
+
+      finally{
+
+        submitBtn.disabled = false;
+
+        submitBtn.innerHTML = "Send Message";
+
+      }
+
+    });
+
+  </script>
+
+</body>
+
+</html>

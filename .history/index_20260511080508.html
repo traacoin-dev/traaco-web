@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="TRAACO — Premium Digital Studio crafting cinematic websites for modern businesses." />
+  <title>TRAACO — Premium Digital Studio</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,900;1,400;1,700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'traaco-dark':     '#0F0F0F',
+            'traaco-bg':       '#111111',
+            'traaco-surface':  '#151515',
+            'traaco-gold':     '#C9A84C',
+            'traaco-beige':    '#E8DCC8',
+            'traaco-offwhite': '#F0ECE4',
+            'traaco-gray':     '#9A9A9A',
+          },
+          fontFamily: {
+            playfair: ['Playfair Display', 'serif'],
+            poppins:  ['Poppins', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+</head>
+
+<body class="bg-traaco-dark text-traaco-offwhite font-poppins overflow-x-hidden">
+
+  <!-- ============ NAVBAR ============ -->
+  <nav id="navbar">
+    <div class="nav-inner">
+      <a href="index.html" class="logo-text font-playfair font-bold text-traaco-offwhite">TRAACO</a>
+
+      <ul class="desktop-nav">
+        <li><a href="index.html" class="nav-link active-nav">Home</a></li>
+        <li><a href="#services" class="nav-link">Services</a></li>
+        <li><a href="#portfolio" class="nav-link">Portfolio</a></li>
+        <li><a href="#pricing" class="nav-link">Pricing</a></li>
+        <li><a href="contact.html" class="nav-link">Contact</a></li>
+        <li><a href="contact.html" class="btn-gold nav-cta-btn">Book Now</a></li>
+      </ul>
+
+      <button id="menu-btn" class="hamburger-btn" aria-label="Toggle menu">
+        <span class="ham-line"></span>
+        <span class="ham-line"></span>
+        <span class="ham-line"></span>
+      </button>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="mobile-menu">
+      <div class="mobile-menu-inner">
+        <a href="index.html" class="mobile-nav-link active-mobile">Home</a>
+        <a href="#services" class="mobile-nav-link">Services</a>
+        <a href="#portfolio" class="mobile-nav-link">Portfolio</a>
+        <a href="#pricing" class="mobile-nav-link">Pricing</a>
+        <a href="contact.html" class="mobile-nav-link">Contact</a>
+        <a href="contact.html" class="btn-gold mobile-cta-btn">Book Now</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ============ HERO ============ -->
+  <section id="hero" class="relative min-h-screen flex items-center overflow-hidden">
+
+    <div class="absolute inset-0">
+      <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=1600&q=80"
+           alt="Premium Restaurant" class="hero-bg-img" loading="eager" />
+      <div class="hero-gradient absolute inset-0"></div>
+    </div>
+    <div class="noise-overlay absolute inset-0 pointer-events-none opacity-20"></div>
+
+    <div class="relative z-10 section-container pt-32 md:pt-28 pb-24 w-full">
+      <div class="max-w-4xl">
+
+        <div class="inline-flex items-center gap-2 mb-5" data-aos="fade-up" data-aos-delay="100">
+          <span class="w-8 h-px bg-traaco-gold"></span>
+          <span class="text-traaco-gold text-xs font-poppins uppercase tracking-widest font-medium">Premium Digital Studio</span>
+          <span class="w-8 h-px bg-traaco-gold"></span>
+        </div>
+
+        <h1 class="font-playfair mb-6" data-aos="fade-up" data-aos-delay="200">
+          <span class="hero-title-line block text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-traaco-offwhite">Premium Digital</span>
+          <span class="hero-title-line block text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-traaco-gold italic">Experiences</span>
+          <span class="hero-title-line block text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-traaco-offwhite">For Modern Businesses</span>
+        </h1>
+
+        <p class="text-traaco-gray text-sm md:text-lg max-w-xl leading-relaxed mb-8 font-light" data-aos="fade-up" data-aos-delay="330">
+          Convert your offline business into a powerful online presence — with modern websites, strategic branding, and cinematic digital experiences.
+        </p>
+
+        <!-- Hero Buttons — side by side, small on mobile -->
+        <div class="hero-btns mb-10" data-aos="fade-up" data-aos-delay="430">
+          <a href="https://wa.me/919999999999?text=Hi%20TRAACO%2C%20I%27d%20like%20a%20free%20consultation!"
+             target="_blank"
+             class="btn-whatsapp hero-btn-primary rounded-full">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="flex-shrink:0">
+              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+            </svg>
+            Free WhatsApp Consultation
+          </a>
+          <a href="#portfolio" class="btn-outline hero-btn-secondary rounded-full">
+            View Portfolio
+          </a>
+        </div>
+
+        <div class="flex flex-wrap gap-2" data-aos="fade-up" data-aos-delay="530">
+          <span class="feature-chip">✦ Mobile Responsive</span>
+          <span class="feature-chip">✦ Premium UI Design</span>
+          <span class="feature-chip">✦ SEO-Friendly</span>
+          <span class="feature-chip">✦ WhatsApp Integration</span>
+          <span class="feature-chip">✦ Fast Delivery</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="scroll-indicator">
+      <span class="text-traaco-gray text-xs tracking-widest uppercase">Scroll</span>
+      <div class="scroll-line"><div class="scroll-dot-inner"></div></div>
+    </div>
+  </section>
+
+  <!-- ============ SERVICES ============ -->
+  <section id="services" class="section-pad bg-traaco-bg relative overflow-hidden">
+    <div class="ambient-glow-left absolute -left-40 top-1/2 -translate-y-1/2 w-96 h-96 rounded-full pointer-events-none"></div>
+    <div class="section-container">
+
+      <div class="text-center mb-14 md:mb-20" data-aos="fade-up">
+        <span class="section-tag">What We Do</span>
+        <h2 class="section-heading mt-4">Digital Solutions Designed<br class="hidden md:block" /> For Business Growth</h2>
+        <p class="section-sub mt-4 max-w-xl mx-auto">From concept to launch — we build digital products that attract, impress, and convert.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
+
+        <div class="service-card group" data-aos="fade-up" data-aos-delay="100">
+          <div class="service-icon-wrap mb-5">
+            <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/>
+            </svg>
+          </div>
+          <h3 class="text-xl font-playfair font-semibold text-traaco-offwhite mb-3">Web Development</h3>
+          <p class="text-traaco-gray text-sm leading-relaxed">Modern, fast, and fully responsive websites that make your business stand out — from landing pages to full digital platforms.</p>
+          <div class="service-card-line mt-6"></div>
+        </div>
+
+        <div class="service-card group featured-service" data-aos="fade-up" data-aos-delay="200">
+          <div class="service-icon-wrap mb-5">
+            <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M4.22 4.22l2.12 2.12M17.66 17.66l2.12 2.12M2 12h3M19 12h3M4.22 19.78l2.12-2.12M17.66 6.34l2.12-2.12"/>
+            </svg>
+          </div>
+          <div class="featured-badge mb-3">Most Popular</div>
+          <h3 class="text-xl font-playfair font-semibold text-traaco-offwhite mb-3">Business Branding</h3>
+          <p class="text-traaco-gray text-sm leading-relaxed">Build a powerful brand identity — logo, color palette, brand guidelines, and a strong online presence that speaks your values.</p>
+          <div class="service-card-line mt-6"></div>
+        </div>
+
+        <div class="service-card group" data-aos="fade-up" data-aos-delay="300">
+          <div class="service-icon-wrap mb-5">
+            <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M12 20h9M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4L16.5 3.5z"/>
+            </svg>
+          </div>
+          <h3 class="text-xl font-playfair font-semibold text-traaco-offwhite mb-3">Digital Design</h3>
+          <p class="text-traaco-gray text-sm leading-relaxed">Premium UI-focused design — menus, social media kits, banners, and full visual identity packages for your brand.</p>
+          <div class="service-card-line mt-6"></div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ EXPERTISE / NICHES ============ -->
+  <section id="expertise" class="section-pad bg-traaco-dark relative overflow-hidden">
+    <div class="ambient-glow-right absolute -right-40 top-1/2 -translate-y-1/2 w-96 h-96 rounded-full pointer-events-none"></div>
+    <div class="section-container">
+
+      <!-- Header -->
+      <div class="text-center mb-8 md:mb-10" data-aos="fade-up">
+        <span class="section-tag">Our Speciality</span>
+        <h2 class="section-heading mt-4">Specialized In Hospitality &amp; Food Experiences</h2>
+        <p class="section-sub mt-4 max-w-2xl mx-auto">We design and build websites for every type of food &amp; hospitality brand — fast, affordable, and premium.</p>
+        <div class="niche-divider mx-auto mt-6"></div>
+        <p class="text-traaco-gold text-xs uppercase tracking-widest font-semibold mt-5 font-poppins">Make Your Food Business Gain Online Visibility</p>
+      </div>
+
+      <!-- Sort Tabs -->
+      <div class="niche-sort-row mb-8" data-aos="fade-up" data-aos-delay="80">
+        <button class="niche-sort-btn active" data-filter="all">All</button>
+        <button class="niche-sort-btn" data-filter="food">🍽️ Restaurants &amp; Food</button>
+        <button class="niche-sort-btn" data-filter="travel">✈️ Travels</button>
+      </div>
+
+      <!-- Niche Grid — no per-card demo button -->
+      <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 md:gap-5 mb-4" id="niche-grid" data-aos="fade-up" data-aos-delay="140">
+
+        <a href="rest.html" class="niche-card group" data-category="food">
+          <div class="niche-img-wrap">
+            <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=600&q=80" alt="Restaurant" class="niche-img" loading="lazy" />
+            <div class="niche-shine"></div>
+          </div>
+          <div class="niche-body">
+            <span class="niche-icon">🍽️</span>
+            <span class="niche-label">Restaurant</span>
+          </div>
+        </a>
+
+        <a href="contact.html" class="niche-card group" data-category="food">
+          <div class="niche-img-wrap">
+            <img src="https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?w=600&q=80" alt="Café" class="niche-img" loading="lazy" />
+            <div class="niche-shine"></div>
+          </div>
+          <div class="niche-body">
+            <span class="niche-icon">☕</span>
+            <span class="niche-label">Café</span>
+          </div>
+        </a>
+
+        <a href="contact.html" class="niche-card group" data-category="food">
+          <div class="niche-img-wrap">
+            <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=600&q=80" alt="Coffee Shop" class="niche-img" loading="lazy" />
+            <div class="niche-shine"></div>
+          </div>
+          <div class="niche-body">
+            <span class="niche-icon">☕</span>
+            <span class="niche-label">Coffee Shops</span>
+          </div>
+        </a>
+
+        <a href="contact.html" class="niche-card group" data-category="food">
+          <div class="niche-img-wrap">
+            <img src="https://images.unsplash.com/photo-1565299585323-38d6b0865b47?w=600&q=80" alt="Food Brands" class="niche-img" loading="lazy" />
+            <div class="niche-shine"></div>
+          </div>
+          <div class="niche-body">
+            <span class="niche-icon">🍔</span>
+            <span class="niche-label">Food Brands</span>
+          </div>
+        </a>
+
+        <a href="contact.html" class="niche-card group col-span-2 sm:col-span-1" data-category="food">
+          <div class="niche-img-wrap">
+            <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=600&q=80" alt="Fast Food" class="niche-img" loading="lazy" />
+            <div class="niche-shine"></div>
+          </div>
+          <div class="niche-body">
+            <span class="niche-icon">🍟</span>
+            <span class="niche-label">Fast Food</span>
+          </div>
+        </a>
+
+        <!-- Travel card — hidden by default, shown when travel filter active -->
+        <a href="travel-digital-solution.html" class="niche-card group hidden" data-category="travel">
+          <div class="niche-img-wrap">
+            <img src="https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?w=600&q=80" alt="Travels" class="niche-img" loading="lazy" />
+            <div class="niche-shine"></div>
+          </div>
+          <div class="niche-body">
+            <span class="niche-icon">✈️</span>
+            <span class="niche-label">Travels</span>
+          </div>
+        </a>
+
+      </div>
+
+      <!-- Single "Look Restaurant Demos" button below ALL cards -->
+      <div class="niche-demo-btn-wrap" data-aos="fade-up" data-aos-delay="200">
+        <a href="rest.html" class="niche-demo-btn">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0">
+            <circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/>
+          </svg>
+          Look Restaurant Demos
+        </a>
+      </div>
+
+      <p class="text-center text-traaco-gray text-sm mt-6" data-aos="fade-up" data-aos-delay="240">
+        Crafted for businesses focused on <span class="text-traaco-beige font-medium">customer experience</span>, presentation, and strong branding.
+      </p>
+    </div>
+  </section>
+
+  <!-- ============ PORTFOLIO ============ -->
+  <section id="portfolio" class="section-pad bg-traaco-bg relative overflow-hidden">
+    <div class="section-container">
+
+      <div class="text-center mb-12 md:mb-16" data-aos="fade-up">
+        <span class="section-tag">Our Work</span>
+        <h2 class="section-heading mt-4">Selected Digital Experiences</h2>
+        <p class="section-sub mt-4 max-w-xl mx-auto">Real projects built for real businesses — every design is unique, crafted from scratch to match your brand's identity and goals.</p>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-6">
+
+        <div class="portfolio-card group" data-aos="fade-up" data-aos-delay="100">
+          <div class="portfolio-img-wrap">
+            <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=800&q=80" alt="Restaurant Website" class="portfolio-img" loading="lazy" />
+            <div class="portfolio-overlay">
+              <span class="portfolio-category">Restaurant Website</span>
+              <h3 class="portfolio-title">La Bella Cucina</h3>
+              <p class="portfolio-desc">Custom site with online reservation, interactive menu &amp; cinematic gallery.</p>
+              <a href="rest.html" class="portfolio-btn">View Project →</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="portfolio-card group" data-aos="fade-up" data-aos-delay="200">
+          <div class="portfolio-img-wrap">
+            <img src="https://images.unsplash.com/photo-1445116572660-236099ec97a0?w=800&q=80" alt="Café Website" class="portfolio-img" loading="lazy" />
+            <div class="portfolio-overlay">
+              <span class="portfolio-category">Café Design</span>
+              <h3 class="portfolio-title">The Brew House</h3>
+              <p class="portfolio-desc">Modern café brand with digital menu, WhatsApp chat &amp; mobile-first layout.</p>
+              <a href="contact.html" class="portfolio-btn">View Project →</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="portfolio-card group sm:col-span-2 lg:col-span-1" data-aos="fade-up" data-aos-delay="300">
+          <div class="portfolio-img-wrap">
+            <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=800&q=80" alt="Premium Brand" class="portfolio-img" loading="lazy" />
+            <div class="portfolio-overlay">
+              <span class="portfolio-category">Premium Brand</span>
+              <h3 class="portfolio-title">Ember &amp; Oak</h3>
+              <p class="portfolio-desc">Premium restaurant with cinematic animations, branding &amp; SEO-optimised structure.</p>
+              <a href="contact.html" class="portfolio-btn">View Project →</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ PRICING ============ -->
+  <section id="pricing" class="section-pad bg-traaco-dark relative overflow-hidden">
+    <div class="ambient-glow-center absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] rounded-full pointer-events-none opacity-20"></div>
+    <div class="section-container">
+
+      <div class="text-center mb-14 md:mb-20" data-aos="fade-up">
+        <span class="section-tag">Investment</span>
+        <h2 class="section-heading mt-4">Flexible Website Solutions</h2>
+        <p class="section-sub mt-4 max-w-lg mx-auto">Transparent pricing, no hidden fees. Every plan includes premium design &amp; on-time delivery.</p>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 md:gap-6 mb-14">
+
+        <div class="pricing-card" data-aos="fade-up" data-aos-delay="100">
+          <div class="pricing-tier">Starter</div>
+          <h3 class="pricing-plan-name">Small Business Website</h3>
+          <div class="pricing-amount">
+            <span class="pricing-starts">Starts at</span>
+            <span class="pricing-price">₹1,999</span>
+          </div>
+          <ul class="pricing-features">
+            <li>1 Landing Page Website</li>
+            <li>Modern UI Design</li>
+            <li>Mobile Responsive Layout</li>
+            <li>WhatsApp Integration</li>
+            <li>Free Hosting</li>
+            <li>Google Maps Integration</li>
+            <li>Smooth User Experience</li>
+            <li>SEO-Friendly Setup</li>
+            <li>Fast Loading Optimization</li>
+            <li>On-Time Delivery</li>
+            <li>1 Revision Update</li>
+          </ul>
+          <a href="contact.html" class="pricing-btn">Get Started</a>
+        </div>
+
+        <div class="pricing-card" data-aos="fade-up" data-aos-delay="200">
+          <div class="pricing-tier">Smart</div>
+          <h3 class="pricing-plan-name">Smart Dynamic Website</h3>
+          <div class="pricing-amount">
+            <span class="pricing-starts">Starts at</span>
+            <span class="pricing-price">₹3,499</span>
+          </div>
+          <p class="pricing-tagline">Ideal for growing businesses looking for a more interactive website.</p>
+          <ul class="pricing-features">
+            <li>Dynamic Website (Up to 3 Pages)</li>
+            <li>Dynamic Animations &amp; Effects</li>
+            <li>Modern Responsive Design</li>
+            <li>Contact Form Integration</li>
+            <li>WhatsApp Integration</li>
+            <li>Google Maps Integration</li>
+            <li>Dynamic Text Animations</li>
+            <li>Minimal Admin Control</li>
+            <li>SEO-Friendly Structure</li>
+            <li>Fast Loading Optimization</li>
+            <li>2 Revision Updates</li>
+          </ul>
+          <a href="contact.html" class="pricing-btn">Get Started</a>
+        </div>
+
+        <div class="pricing-card pricing-featured" data-aos="fade-up" data-aos-delay="300">
+          <div class="featured-pricing-badge">Most Popular</div>
+          <div class="pricing-tier gold-tier">Business</div>
+          <h3 class="pricing-plan-name">Business Website</h3>
+          <div class="pricing-amount">
+            <span class="pricing-starts">Starts at</span>
+            <span class="pricing-price gold-price">₹4,999</span>
+          </div>
+          <p class="pricing-tagline">Professional website designed to build trust and generate leads.</p>
+          <ul class="pricing-features">
+            <li>5–6 Static Pages</li>
+            <li>Modern UI Design</li>
+            <li>Contact / Form Integration</li>
+            <li>Mobile Responsive Design</li>
+            <li>Free Initial Logo Design</li>
+            <li>Free Initial Hosting</li>
+            <li>WhatsApp Integration</li>
+            <li>Google Maps Integration</li>
+            <li>SEO-Friendly Setup</li>
+            <li>Fast Loading Optimization</li>
+            <li>3 Revision Updates</li>
+          </ul>
+          <a href="contact.html" class="pricing-btn-gold">Get Started</a>
+        </div>
+
+        <div class="pricing-card" data-aos="fade-up" data-aos-delay="400">
+          <div class="pricing-tier">Premium</div>
+          <h3 class="pricing-plan-name">Premium Dynamic Website</h3>
+          <div class="pricing-amount">
+            <span class="pricing-starts">Starts at</span>
+            <span class="pricing-price">₹9,999</span>
+          </div>
+          <p class="pricing-tagline">Advanced dynamic solution for brands that need premium features &amp; performance.</p>
+          <ul class="pricing-features">
+            <li>Dynamic Website (5–6 Pages)</li>
+            <li>Admin Dashboard Access</li>
+            <li>Premium Scroll &amp; Smooth Animations</li>
+            <li>Advanced Modern UI Design</li>
+            <li>Contact / Form Integration</li>
+            <li>WhatsApp Integration</li>
+            <li>Business-Focused Solutions</li>
+            <li>Free Logo Design</li>
+            <li>SEO-Friendly Architecture</li>
+            <li>Fast Loading Optimization</li>
+            <li>Flexible Design Customizations</li>
+            <li>Mobile Responsive on All Devices</li>
+            <li>Priority Support</li>
+            <li>3 Months Support</li>
+          </ul>
+          <a href="contact.html" class="pricing-btn">Get Started</a>
+        </div>
+
+      </div>
+
+      <!-- Hosting -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-5 md:gap-6" data-aos="fade-up">
+        <div class="hosting-card">
+          <div class="hosting-icon">🌐</div>
+          <h4 class="hosting-title">1 Year Plan</h4>
+          <p class="hosting-price">₹999</p>
+          <ul class="hosting-features">
+            <li>Domain Registration</li><li>Hosting Setup Support</li><li>SSL Certificate</li>
+          </ul>
+        </div>
+        <div class="hosting-card hosting-featured">
+          <div class="hosting-best">Best Value</div>
+          <div class="hosting-icon">🚀</div>
+          <h4 class="hosting-title">3 Year Plan</h4>
+          <p class="hosting-price gold-price">Pay for 2 Years</p>
+          <ul class="hosting-features">
+            <li>1 Year Free Domain</li><li>Hosting Setup Support</li><li>SSL Certificate</li><li>Long-term Stability</li>
+          </ul>
+          <p class="text-xs text-traaco-gray mt-3 text-center">Pay 2 years — get 3. 1st year hosting charges may apply.</p>
+        </div>
+        <div class="hosting-card">
+          <div class="hosting-icon">🛠️</div>
+          <h4 class="hosting-title">Maintenance</h4>
+          <p class="hosting-price">₹500 <span class="text-sm font-light">/ fix</span></p>
+          <ul class="hosting-features">
+            <li>Minor Updates</li><li>Image Changes</li><li>Bug Fixes</li><li>Website Monitoring</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CTA ============ -->
+  <section id="cta" class="section-pad bg-traaco-surface relative overflow-hidden">
+    <div class="cta-bg-glow absolute inset-0 pointer-events-none"></div>
+    <div class="noise-overlay absolute inset-0 pointer-events-none opacity-10"></div>
+    <div class="max-w-4xl mx-auto px-5 md:px-10 text-center relative z-10">
+
+      <div data-aos="fade-up">
+        <span class="section-tag">Let's Build Together</span>
+        <h2 class="font-playfair text-3xl md:text-5xl lg:text-6xl font-bold text-traaco-offwhite mt-4 leading-tight">
+          Ready To Build Your<br /><span class="text-traaco-gold italic">Digital Presence?</span>
+        </h2>
+        <p class="text-traaco-gray text-sm md:text-lg mt-6 max-w-xl mx-auto leading-relaxed">
+          Let's create a premium online experience for your business. Starting from just ₹1,999 — no fluff, just results.
+        </p>
+      </div>
+
+      <!-- CTA Buttons — side by side on mobile -->
+      <div class="cta-btns mt-10 md:mt-12" data-aos="fade-up" data-aos-delay="150">
+        <a href="contact.html" class="btn-gold cta-btn-primary rounded-full">Start Your Project</a>
+        <a href="rest.html"    class="btn-outline cta-btn-secondary rounded-full">View Demo</a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="bg-traaco-dark border-t border-white/5 py-12 md:py-16">
+    <div class="section-container">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12 mb-10 md:mb-12">
+
+        <div class="col-span-2 md:col-span-1">
+          <a href="index.html" class="logo-text text-2xl font-playfair font-bold text-traaco-offwhite tracking-wider">TRAACO</a>
+          <p class="text-traaco-gray text-sm leading-relaxed mt-4 max-w-xs">Premium digital studio crafting cinematic web experiences for hospitality &amp; food businesses.</p>
+          <div class="flex gap-4 mt-5">
+            <a href="#" class="social-icon" aria-label="Instagram">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="18" height="18">
+                <rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.5" fill="currentColor"/>
+              </svg>
+            </a>
+            <a href="#" class="social-icon" aria-label="LinkedIn">
+              <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18">
+                <path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/>
+              </svg>
+            </a>
+            <a href="https://wa.me/919999999999" class="social-icon" aria-label="WhatsApp" target="_blank">
+              <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <div>
+          <h5 class="footer-heading">Quick Links</h5>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#portfolio">Portfolio</a></li>
+            <li><a href="#pricing">Pricing</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h5 class="footer-heading">Services</h5>
+          <ul class="footer-links">
+            <li><a href="#services">Web Development</a></li>
+            <li><a href="#services">Business Branding</a></li>
+            <li><a href="#services">Digital Design</a></li>
+            <li><a href="rest.html">Restaurant Sites</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h5 class="footer-heading">Contact</h5>
+          <ul class="footer-links">
+            <li><a href="mailto:hello@traaco.in">hello@traaco.in</a></li>
+            <li><a href="https://wa.me/919999999999" target="_blank">+91 99999 99999</a></li>
+            <li><a href="#">Hyderabad, India</a></li>
+          </ul>
+        </div>
+
+      </div>
+      <div class="border-t border-white/5 pt-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-traaco-gray text-xs">
+        <p>© 2024 TRAACO. All rights reserved.</p>
+        <p>Crafted with ♥ for premium brands</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ============ FLOATING WHATSAPP — bottom-right ============ -->
+  <a href="https://wa.me/919999999999" target="_blank" class="whatsapp-float" aria-label="Chat on WhatsApp">
+    <svg viewBox="0 0 24 24" fill="currentColor" width="26" height="26">
+      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+    </svg>
+    <span class="whatsapp-pulse"></span>
+  </a>
+
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script src="js/script.js"></script>
+</body>
+</html>

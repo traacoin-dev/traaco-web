@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="TRAACO — Premium restaurant website design & digital solutions for food businesses in India." />
+  <title>Restaurant Websites — TRAACO Digital Studio</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,900;1,400;1,700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+  <link rel="stylesheet" href="cssstyles.css" />
+  <link rel="stylesheet" href="rest.css" />
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'traaco-dark':     '#0F0F0F',
+            'traaco-bg':       '#111111',
+            'traaco-surface':  '#151515',
+            'traaco-gold':     '#C9A84C',
+            'traaco-beige':    '#E8DCC8',
+            'traaco-coffee':   '#7B5B3A',
+            'traaco-orange':   '#D4783A',
+            'traaco-offwhite': '#F0ECE4',
+            'traaco-gray':     '#9A9A9A',
+          },
+          fontFamily: {
+            playfair: ['Playfair Display', 'serif'],
+            poppins:  ['Poppins', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+</head>
+
+<body class="bg-traaco-dark text-traaco-offwhite font-poppins overflow-x-hidden">
+
+  <!-- ============ NAVBAR ============ -->
+  <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-500">
+    <div class="nav-inner">
+      <a href="index.html" class="logo-text font-playfair font-bold tracking-wider text-traaco-offwhite">TRAACO</a>
+
+      <ul class="desktop-nav">
+        <li><a href="index.html" class="nav-link">Home</a></li>
+        <li><a href="index.html#services" class="nav-link">Services</a></li>
+        <li><a href="#rest-portfolio" class="nav-link">Portfolio</a></li>
+        <li><a href="#rest-pricing" class="nav-link active-nav">Pricing</a></li>
+        <li><a href="contact.html" class="nav-link">Contact</a></li>
+        <li><a href="contact.html" class="btn-gold nav-cta-btn">Book Now</a></li>
+      </ul>
+
+      <button id="menu-btn" aria-label="Toggle menu" class="hamburger-btn">
+        <span class="ham-line"></span>
+        <span class="ham-line"></span>
+        <span class="ham-line"></span>
+      </button>
+    </div>
+
+    <div id="mobile-menu" class="mobile-menu">
+      <div class="mobile-menu-inner">
+        <a href="index.html" class="mobile-nav-link">Home</a>
+        <a href="index.html#services" class="mobile-nav-link">Services</a>
+        <a href="#rest-portfolio" class="mobile-nav-link">Portfolio</a>
+        <a href="#rest-pricing" class="mobile-nav-link">Pricing</a>
+        <a href="contact.html" class="mobile-nav-link">Contact</a>
+        <a href="contact.html" class="btn-gold mobile-cta-btn">Book Now</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ============ HERO ============ -->
+  <section id="rest-hero" class="relative min-h-screen flex items-center overflow-hidden">
+
+    <div class="absolute inset-0">
+      <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=1600&q=80"
+           alt="Premium Restaurant" class="hero-bg-img" loading="eager" />
+      <div class="rest-hero-gradient absolute inset-0"></div>
+    </div>
+    <div class="noise-overlay absolute inset-0 opacity-15 pointer-events-none"></div>
+
+    <!-- Breadcrumb -->
+    <div class="absolute top-24 left-5 md:left-10 z-10" data-aos="fade-right">
+      <div class="flex items-center gap-2 text-xs text-traaco-gray">
+        <a href="index.html" class="hover:text-traaco-gold transition-colors">Home</a>
+        <span>/</span>
+        <span class="text-traaco-gold">Restaurants</span>
+      </div>
+    </div>
+
+    <div class="relative z-10 section-container pt-32 md:pt-28 pb-24 w-full">
+      <div class="max-w-3xl">
+
+        <div class="inline-flex items-center gap-2 mb-5" data-aos="fade-up" data-aos-delay="100">
+          <span class="w-8 h-px bg-traaco-gold"></span>
+          <span class="text-traaco-gold text-xs font-poppins uppercase tracking-widest font-medium">Restaurant Digital Solutions</span>
+          <span class="w-8 h-px bg-traaco-gold"></span>
+        </div>
+
+        <h1 class="font-playfair leading-none mb-6" data-aos="fade-up" data-aos-delay="200">
+          <span class="hero-title-line block text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-traaco-offwhite">Websites That</span>
+          <span class="hero-title-line block text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-traaco-gold italic">Fill Your Tables</span>
+          <span class="hero-title-line block text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-traaco-offwhite">Every Night</span>
+        </h1>
+
+        <p class="text-traaco-gray text-base md:text-lg max-w-xl leading-relaxed mb-8 font-light" data-aos="fade-up" data-aos-delay="330">
+          Premium restaurant websites that showcase your cuisine, ambiance, and story — turning online visitors into loyal guests.
+        </p>
+
+        <div class="flex flex-col sm:flex-row gap-4 mb-12" data-aos="fade-up" data-aos-delay="430">
+          <a href="#rest-pricing" class="btn-gold px-8 py-4 rounded-full text-sm font-semibold text-center">View Pricing</a>
+          <a href="contact.html" class="btn-whatsapp px-8 py-4 rounded-full text-sm font-semibold gap-2">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+            Free Consultation
+          </a>
+        </div>
+
+        <!-- Stats -->
+        <div class="grid grid-cols-3 gap-3 max-w-xs" data-aos="fade-up" data-aos-delay="530">
+          <div class="rest-stat"><div class="rest-stat-number">50+</div><div class="rest-stat-label">Projects</div></div>
+          <div class="rest-stat"><div class="rest-stat-number">7d</div><div class="rest-stat-label">Delivery</div></div>
+          <div class="rest-stat"><div class="rest-stat-number">100%</div><div class="rest-stat-label">Responsive</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ WHY A WEBSITE ============ -->
+  <section class="section-pad bg-traaco-bg relative overflow-hidden">
+    <div class="ambient-glow-left absolute -left-40 top-1/2 -translate-y-1/2 w-80 h-80 rounded-full pointer-events-none"></div>
+    <div class="section-container">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+
+        <div class="relative" data-aos="fade-right">
+          <div class="grid grid-cols-2 gap-3">
+            <div class="rest-gallery-card" style="aspect-ratio:3/4">
+              <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=600&q=80" alt="Fine Dining" class="rest-gallery-img w-full h-full" loading="lazy" />
+              <span class="rest-gallery-label">Fine Dining</span>
+            </div>
+            <div class="flex flex-col gap-3">
+              <div class="rest-gallery-card" style="aspect-ratio:1/1">
+                <img src="https://images.unsplash.com/photo-1482049016688-2d3e1b311543?w=400&q=80" alt="Food Photography" class="rest-gallery-img w-full h-full" loading="lazy" />
+                <span class="rest-gallery-label">Food Photography</span>
+              </div>
+              <div class="rest-gallery-card" style="aspect-ratio:1/1">
+                <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=400&q=80" alt="Restaurant Interior" class="rest-gallery-img w-full h-full" loading="lazy" />
+                <span class="rest-gallery-label">Interior Design</span>
+              </div>
+            </div>
+          </div>
+          <div class="absolute -bottom-4 -right-4 w-24 h-24 border border-traaco-gold opacity-20 rounded-lg pointer-events-none"></div>
+          <div class="absolute -top-4 -left-4 w-16 h-16 border border-traaco-gold opacity-10 rounded-full pointer-events-none"></div>
+        </div>
+
+        <div data-aos="fade-left" data-aos-delay="150">
+          <span class="section-tag">Why It Matters</span>
+          <h2 class="section-heading mt-4">Why Every Restaurant Needs a Premium Website</h2>
+          <p class="section-sub mt-5 max-w-md">In 2024, 90% of diners research a restaurant online before visiting. Your website is your digital storefront — the first impression before your food does.</p>
+          <div class="flex flex-col gap-4 mt-8">
+            <div class="rest-feature">
+              <div class="rest-feature-icon">📍</div>
+              <div><div class="rest-feature-title">Google Discoverability</div><div class="rest-feature-desc">Appear in "restaurants near me" searches and drive organic foot traffic daily.</div></div>
+            </div>
+            <div class="rest-feature">
+              <div class="rest-feature-icon">📅</div>
+              <div><div class="rest-feature-title">Online Reservations</div><div class="rest-feature-desc">Let guests book tables 24/7 — no calls, no missed bookings, no friction.</div></div>
+            </div>
+            <div class="rest-feature">
+              <div class="rest-feature-icon">🍽️</div>
+              <div><div class="rest-feature-title">Digital Menu Showcase</div><div class="rest-feature-desc">Beautiful, up-to-date menus with food photography that makes people hungry before they arrive.</div></div>
+            </div>
+            <div class="rest-feature">
+              <div class="rest-feature-icon">⭐</div>
+              <div><div class="rest-feature-title">Trust &amp; Social Proof</div><div class="rest-feature-desc">Reviews, awards, and story — all in one professional experience that builds instant credibility.</div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ WHAT'S INCLUDED ============ -->
+  <section class="section-pad bg-traaco-dark relative overflow-hidden">
+    <div class="ambient-glow-right absolute -right-40 top-1/2 -translate-y-1/2 w-80 h-80 rounded-full pointer-events-none"></div>
+    <div class="section-container">
+      <div class="text-center mb-12 md:mb-16" data-aos="fade-up">
+        <span class="section-tag">What You Get</span>
+        <h2 class="section-heading mt-4">Everything Your Restaurant<br class="hidden md:block" /> Website Needs</h2>
+        <p class="section-sub mt-4 max-w-xl mx-auto">We build complete restaurant websites with every feature that converts curious visitors into seated guests.</p>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-6">
+        <div class="rest-included-card" data-aos="fade-up" data-aos-delay="50"><div class="rest-included-icon">🎨</div><h4 class="rest-included-title">Custom Premium Design</h4><p class="rest-included-desc">Unique, branded design that reflects your restaurant's personality — not a generic template.</p></div>
+        <div class="rest-included-card" data-aos="fade-up" data-aos-delay="100"><div class="rest-included-icon">📱</div><h4 class="rest-included-title">Mobile-First Responsive</h4><p class="rest-included-desc">Perfectly optimized for every screen — most of your visitors will find you on mobile.</p></div>
+        <div class="rest-included-card" data-aos="fade-up" data-aos-delay="150"><div class="rest-included-icon">🍽️</div><h4 class="rest-included-title">Interactive Digital Menu</h4><p class="rest-included-desc">Beautiful, categorized menu with dish descriptions and food photography sections.</p></div>
+        <div class="rest-included-card" data-aos="fade-up" data-aos-delay="200"><div class="rest-included-icon">📅</div><h4 class="rest-included-title">Reservation System</h4><p class="rest-included-desc">Integrated booking forms with WhatsApp confirmation — available in higher packages.</p></div>
+        <div class="rest-included-card" data-aos="fade-up" data-aos-delay="250"><div class="rest-included-icon">🔍</div><h4 class="rest-included-title">SEO Optimized</h4><p class="rest-included-desc">Built to rank on Google for local restaurant searches — organic traffic from day one.</p></div>
+        <div class="rest-included-card" data-aos="fade-up" data-aos-delay="300"><div class="rest-included-icon">💬</div><h4 class="rest-included-title">WhatsApp Integration</h4><p class="rest-included-desc">Floating WhatsApp button for instant customer queries, orders, and reservations.</p></div>
+        <div class="rest-included-card" data-aos="fade-up" data-aos-delay="350"><div class="rest-included-icon">📍</div><h4 class="rest-included-title">Google Maps Integration</h4><p class="rest-included-desc">Embedded location map with directions so guests find you effortlessly.</p></div>
+        <div class="rest-included-card" data-aos="fade-up" data-aos-delay="400"><div class="rest-included-icon">🖼️</div><h4 class="rest-included-title">Photo Gallery</h4><p class="rest-included-desc">Stunning image galleries for your food, interiors, events, and team.</p></div>
+        <div class="rest-included-card" data-aos="fade-up" data-aos-delay="450"><div class="rest-included-icon">⚡</div><h4 class="rest-included-title">Fast Loading Speed</h4><p class="rest-included-desc">Optimized for speed — because slow websites lose customers before they see the menu.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ PORTFOLIO ============ -->
+  <section id="rest-portfolio" class="section-pad bg-traaco-bg relative overflow-hidden">
+    <div class="section-container">
+      <div class="text-center mb-12 md:mb-16" data-aos="fade-up">
+        <span class="section-tag">Our Work</span>
+        <h2 class="section-heading mt-4">Restaurant Projects We've Built</h2>
+        <p class="section-sub mt-4 max-w-lg mx-auto">Every project crafted from scratch — no templates, just premium design built around your brand.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
+
+        <div class="rest-project-card" data-aos="fade-up" data-aos-delay="100">
+          <div class="rest-project-img-wrap">
+            <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=800&q=80" alt="La Bella Cucina" class="rest-project-img" loading="lazy" />
+            <div class="rest-project-overlay"><div class="rest-project-tags"><span class="rest-tag">Fine Dining</span><span class="rest-tag">Premium Package</span></div></div>
+          </div>
+          <div class="rest-project-info">
+            <div class="rest-project-type">Restaurant Website</div>
+            <h3 class="rest-project-name">La Bella Cucina</h3>
+            <p class="rest-project-desc">Full custom website with online reservation system, interactive menu, and cinematic food gallery.</p>
+            <a href="contact.html" class="rest-project-link">Get Similar →</a>
+          </div>
+        </div>
+
+        <div class="rest-project-card" data-aos="fade-up" data-aos-delay="200">
+          <div class="rest-project-img-wrap">
+            <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=800&q=80" alt="Ember & Oak" class="rest-project-img" loading="lazy" />
+            <div class="rest-project-overlay"><div class="rest-project-tags"><span class="rest-tag">Casual Dining</span><span class="rest-tag">Business Package</span></div></div>
+          </div>
+          <div class="rest-project-info">
+            <div class="rest-project-type">Restaurant Website</div>
+            <h3 class="rest-project-name">Ember &amp; Oak</h3>
+            <p class="rest-project-desc">Modern restaurant brand with WhatsApp ordering, photo gallery, and Google Maps integration.</p>
+            <a href="contact.html" class="rest-project-link">Get Similar →</a>
+          </div>
+        </div>
+
+        <div class="rest-project-card" data-aos="fade-up" data-aos-delay="300">
+          <div class="rest-project-img-wrap">
+            <img src="https://images.unsplash.com/photo-1559329007-40df8a9345d8?w=800&q=80" alt="Spice Routes" class="rest-project-img" loading="lazy" />
+            <div class="rest-project-overlay"><div class="rest-project-tags"><span class="rest-tag">Indian Cuisine</span><span class="rest-tag">Smart Package</span></div></div>
+          </div>
+          <div class="rest-project-info">
+            <div class="rest-project-type">Restaurant Website</div>
+            <h3 class="rest-project-name">Spice Routes</h3>
+            <p class="rest-project-desc">Vibrant Indian restaurant website with digital menu, SEO optimization, and social media integration.</p>
+            <a href="contact.html" class="rest-project-link">Get Similar →</a>
+          </div>
+        </div>
+
+        <div class="rest-project-card" data-aos="fade-up" data-aos-delay="400">
+          <div class="rest-project-img-wrap">
+            <img src="https://images.unsplash.com/photo-1544025162-d76594e20df5?w=800&q=80" alt="The Grillmaster" class="rest-project-img" loading="lazy" />
+            <div class="rest-project-overlay"><div class="rest-project-tags"><span class="rest-tag">Fast Casual</span><span class="rest-tag">Starter Package</span></div></div>
+          </div>
+          <div class="rest-project-info">
+            <div class="rest-project-type">Restaurant Website</div>
+            <h3 class="rest-project-name">The Grillmaster</h3>
+            <p class="rest-project-desc">Clean, fast-loading website for a grill restaurant — mobile-first with menu and location features.</p>
+            <a href="contact.html" class="rest-project-link">Get Similar →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ PRICING ============ -->
+  <section id="rest-pricing" class="section-pad bg-traaco-dark relative overflow-hidden">
+    <div class="ambient-glow-center absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] rounded-full pointer-events-none opacity-20"></div>
+    <div class="section-container">
+      <div class="text-center mb-14 md:mb-20" data-aos="fade-up">
+        <span class="section-tag">Investment</span>
+        <h2 class="section-heading mt-4">Restaurant Website Packages</h2>
+        <p class="section-sub mt-4 max-w-lg mx-auto">Pick a package that fits your restaurant — from a beautiful starter site to a full dynamic ecosystem.</p>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 md:gap-6 mb-14">
+
+        <!-- Plan 1 -->
+        <div class="rest-pricing-card" data-aos="fade-up" data-aos-delay="100">
+          <div class="pricing-tier mb-1">Starter</div>
+          <h3 class="pricing-plan-name">Small Business Website</h3>
+          <div class="pricing-amount">
+            <span class="pricing-starts">Starts at</span>
+            <span class="pricing-price">₹1,999</span>
+          </div>
+          <ul class="pricing-features">
+            <li>1 Landing Page Website</li>
+            <li>Modern UI Design</li>
+            <li>Mobile Responsive Layout</li>
+            <li>WhatsApp Integration</li>
+            <li>Free Hosting</li>
+            <li>Google Maps Integration</li>
+            <li>Smooth User Experience</li>
+            <li>SEO-Friendly Setup</li>
+            <li>Fast Loading Optimization</li>
+            <li>On-Time Delivery</li>
+            <li>1 Revision Update</li>
+          </ul>
+          <a href="contact.html" class="pricing-btn">Get Started</a>
+        </div>
+
+        <!-- Plan 2 -->
+        <div class="rest-pricing-card" data-aos="fade-up" data-aos-delay="200">
+          <div class="pricing-tier mb-1">Smart</div>
+          <h3 class="pricing-plan-name">Smart Dynamic Website</h3>
+          <div class="pricing-amount">
+            <span class="pricing-starts">Starts at</span>
+            <span class="pricing-price">₹3,499</span>
+          </div>
+          <p class="pricing-tagline">Ideal for growing restaurants looking for a more interactive website.</p>
+          <ul class="pricing-features">
+            <li>Dynamic Website (Up to 3 Pages)</li>
+            <li>Dynamic Animations &amp; Effects</li>
+            <li>Modern Responsive Design</li>
+            <li>Contact Form Integration</li>
+            <li>WhatsApp Integration</li>
+            <li>Google Maps Integration</li>
+            <li>Dynamic Text Animations</li>
+            <li>Minimal Admin Control</li>
+            <li>SEO-Friendly Structure</li>
+            <li>Fast Loading Optimization</li>
+            <li>2 Revision Updates</li>
+          </ul>
+          <a href="contact.html" class="pricing-btn">Get Started</a>
+        </div>
+
+        <!-- Plan 3 — Featured -->
+        <div class="rest-pricing-card rest-pricing-featured" data-aos="fade-up" data-aos-delay="300">
+          <div class="featured-pricing-badge">Most Popular</div>
+          <div class="pricing-tier gold-tier mb-1">Business</div>
+          <h3 class="pricing-plan-name">Business Restaurant</h3>
+          <div class="pricing-amount">
+            <span class="pricing-starts">Starts at</span>
+            <span class="pricing-price gold-price">₹4,999</span>
+          </div>
+          <p class="pricing-tagline">Professional restaurant website designed to build trust and fill tables.</p>
+          <ul class="pricing-features">
+            <li>5–6 Static Pages</li>
+            <li>Modern UI Design</li>
+            <li>Contact / Form Integration</li>
+            <li>Mobile Responsive Design</li>
+            <li>Free Initial Logo Design</li>
+            <li>Free Initial Hosting</li>
+            <li>WhatsApp Integration</li>
+            <li>Google Maps Integration</li>
+            <li>SEO-Friendly Setup</li>
+            <li>Fast Loading Optimization</li>
+            <li>3 Revision Updates</li>
+          </ul>
+          <a href="contact.html" class="pricing-btn-gold">Get Started</a>
+        </div>
+
+        <!-- Plan 4 -->
+        <div class="rest-pricing-card" data-aos="fade-up" data-aos-delay="400">
+          <div class="pricing-tier mb-1">Premium</div>
+          <h3 class="pricing-plan-name">Premium Dynamic Website</h3>
+          <div class="pricing-amount">
+            <span class="pricing-starts">From</span>
+            <span class="pricing-price">₹9,999</span>
+          </div>
+          <p class="pricing-tagline">Advanced dynamic solution for restaurants that need premium features &amp; performance.</p>
+          <ul class="pricing-features">
+            <li>Dynamic Website (5–6 Pages)</li>
+            <li>Admin Dashboard Access</li>
+            <li>Premium Scroll &amp; Smooth Animations</li>
+            <li>Advanced Modern UI Design</li>
+            <li>Contact / Form Integration</li>
+            <li>WhatsApp Integration</li>
+            <li>Business-Focused Solutions</li>
+            <li>Free Logo Design</li>
+            <li>SEO-Friendly Architecture</li>
+            <li>Fast Loading Optimization</li>
+            <li>Flexible Design Customizations</li>
+            <li>Mobile Responsive on All Devices</li>
+            <li>Priority Support</li>
+            <li>3 Months Support</li>
+          </ul>
+          <a href="contact.html" class="pricing-btn">Get Started</a>
+        </div>
+
+      </div>
+
+      <!-- Add-ons -->
+      <div data-aos="fade-up">
+        <h3 class="text-center font-playfair text-xl text-traaco-offwhite mb-6">Optional Add-Ons</h3>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+          <div class="addon-card"><span class="addon-icon">🌐</span><span class="addon-name">Domain + Hosting (1yr)</span><span class="addon-price">₹999</span></div>
+          <div class="addon-card"><span class="addon-icon">🚀</span><span class="addon-name">Domain + Hosting (3yr)</span><span class="addon-price">Pay 2 yrs</span></div>
+          <div class="addon-card"><span class="addon-icon">🛠️</span><span class="addon-name">Maintenance</span><span class="addon-price">₹500/fix</span></div>
+          <div class="addon-card"><span class="addon-icon">📸</span><span class="addon-name">Photo Kit</span><span class="addon-price">On Request</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ PROCESS ============ -->
+  <section class="section-pad bg-traaco-bg">
+    <div class="section-container">
+      <div class="text-center mb-12 md:mb-16" data-aos="fade-up">
+        <span class="section-tag">How It Works</span>
+        <h2 class="section-heading mt-4">From Idea to Live Website<br class="hidden md:block" /> in 7 Days</h2>
+      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+        <div class="process-step" data-aos="fade-up" data-aos-delay="100"><div class="process-num">01</div><h4 class="process-title">Discovery Call</h4><p class="process-desc">We understand your restaurant, vision, audience, and goals.</p></div>
+        <div class="process-step" data-aos="fade-up" data-aos-delay="200"><div class="process-num">02</div><h4 class="process-title">Design &amp; Plan</h4><p class="process-desc">We create the layout, design direction, and content structure.</p></div>
+        <div class="process-step" data-aos="fade-up" data-aos-delay="300"><div class="process-num">03</div><h4 class="process-title">Build &amp; Review</h4><p class="process-desc">Full website built, tested, and shared for your feedback.</p></div>
+        <div class="process-step" data-aos="fade-up" data-aos-delay="400"><div class="process-num">04</div><h4 class="process-title">Launch 🚀</h4><p class="process-desc">We go live, setup domain &amp; hosting, and you start getting customers.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ TESTIMONIALS ============ -->
+  <section class="section-pad bg-traaco-dark relative overflow-hidden">
+    <div class="section-container">
+      <div class="text-center mb-12 md:mb-16" data-aos="fade-up">
+        <span class="section-tag">Social Proof</span>
+        <h2 class="section-heading mt-4">What Our Restaurant Clients Say</h2>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-5 md:gap-6">
+        <div class="testimonial-card" data-aos="fade-up" data-aos-delay="100">
+          <div class="flex gap-px mb-4"><span class="text-traaco-gold text-sm">★★★★★</span></div>
+          <p class="text-traaco-gray text-sm leading-relaxed mb-5">"TRAACO built us a stunning website in just 5 days. Our online reservations went up by 40% in the first month. The design is exactly what we envisioned."</p>
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-full bg-traaco-coffee flex items-center justify-center text-xs font-bold text-traaco-offwhite flex-shrink-0">AR</div>
+            <div><div class="text-sm font-medium text-traaco-offwhite">Arjun Reddy</div><div class="text-xs text-traaco-gray">Owner, Spice Routes — Hyderabad</div></div>
+          </div>
+        </div>
+        <div class="testimonial-card" data-aos="fade-up" data-aos-delay="200">
+          <div class="flex gap-px mb-4"><span class="text-traaco-gold text-sm">★★★★★</span></div>
+          <p class="text-traaco-gray text-sm leading-relaxed mb-5">"The premium package was worth every rupee. Customers often tell us our website made them choose us over competitors. That's the power of good design."</p>
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-full bg-traaco-gold flex items-center justify-center text-xs font-bold text-traaco-dark flex-shrink-0">PS</div>
+            <div><div class="text-sm font-medium text-traaco-offwhite">Priya Sharma</div><div class="text-xs text-traaco-gray">Manager, Ember &amp; Oak — Bangalore</div></div>
+          </div>
+        </div>
+        <div class="testimonial-card" data-aos="fade-up" data-aos-delay="300">
+          <div class="flex gap-px mb-4"><span class="text-traaco-gold text-sm">★★★★★</span></div>
+          <p class="text-traaco-gray text-sm leading-relaxed mb-5">"We needed a fast, affordable website. TRAACO delivered within budget and the result looks like we spent 5x more. Our WhatsApp bookings have tripled."</p>
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-full bg-traaco-surface flex items-center justify-center text-xs font-bold text-traaco-gold border border-traaco-gold/20 flex-shrink-0">MK</div>
+            <div><div class="text-sm font-medium text-traaco-offwhite">Mohammed Khan</div><div class="text-xs text-traaco-gray">Owner, The Grillmaster — Mumbai</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CTA ============ -->
+  <section id="rest-contact" class="section-pad bg-traaco-surface relative overflow-hidden">
+    <div class="cta-bg-glow absolute inset-0 pointer-events-none"></div>
+    <div class="noise-overlay absolute inset-0 pointer-events-none opacity-10"></div>
+    <div class="max-w-3xl mx-auto px-5 md:px-10 text-center relative z-10">
+      <div data-aos="fade-up">
+        <span class="section-tag">Start Today</span>
+        <h2 class="font-playfair text-3xl md:text-5xl font-bold text-traaco-offwhite mt-4 leading-tight">
+          Ready to Get Your<br /><span class="text-traaco-gold italic">Restaurant Online?</span>
+        </h2>
+        <p class="text-traaco-gray text-base md:text-lg mt-5 max-w-xl mx-auto leading-relaxed">
+          Starting from just ₹1,999. Get a free consultation and custom quote within 24 hours.
+        </p>
+      </div>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center mt-10" data-aos="fade-up" data-aos-delay="150">
+        <a href="contact.html" class="btn-gold px-10 py-4 rounded-full text-base font-semibold">Start Your Project</a>
+        <a href="https://wa.me/919999999999?text=Hi%20TRAACO%2C%20I%20need%20a%20restaurant%20website." target="_blank" class="btn-whatsapp px-10 py-4 rounded-full text-base font-semibold gap-2">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+          Chat on WhatsApp
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="bg-traaco-dark border-t border-white/5 py-12 md:py-16">
+    <div class="section-container">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12 mb-10">
+        <div class="col-span-2 md:col-span-1">
+          <a href="index.html" class="logo-text text-2xl font-playfair font-bold text-traaco-offwhite tracking-wider">TRAACO</a>
+          <p class="text-traaco-gray text-sm leading-relaxed mt-4 max-w-xs">Premium digital studio crafting cinematic web experiences for hospitality &amp; food businesses.</p>
+          <div class="flex gap-4 mt-5">
+            <a href="#" class="social-icon" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="18" height="18"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.5" fill="currentColor"/></svg></a>
+            <a href="https://wa.me/919999999999" class="social-icon" aria-label="WhatsApp" target="_blank"><svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg></a>
+          </div>
+        </div>
+        <div>
+          <h5 class="footer-heading">Quick Links</h5>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="index.html#services">Services</a></li>
+            <li><a href="index.html#portfolio">Portfolio</a></li>
+            <li><a href="index.html#pricing">Pricing</a></li>
+          </ul>
+        </div>
+        <div>
+          <h5 class="footer-heading">Restaurant</h5>
+          <ul class="footer-links">
+            <li><a href="#rest-portfolio">Our Projects</a></li>
+            <li><a href="#rest-pricing">Packages</a></li>
+            <li><a href="contact.html">Get Quote</a></li>
+            <li><a href="index.html#expertise">Other Niches</a></li>
+          </ul>
+        </div>
+        <div>
+          <h5 class="footer-heading">Contact</h5>
+          <ul class="footer-links">
+            <li><a href="mailto:hello@traaco.in">hello@traaco.in</a></li>
+            <li><a href="https://wa.me/919999999999" target="_blank">+91 99999 99999</a></li>
+            <li><a href="#">Hyderabad, India</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="border-t border-white/5 pt-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-traaco-gray text-xs">
+        <p>© 2024 TRAACO. All rights reserved.</p>
+        <p>Restaurant Website Specialists</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Floating WhatsApp -->
+  <a href="https://wa.me/919999999999" target="_blank" class="whatsapp-float" aria-label="Chat on WhatsApp">
+    <svg viewBox="0 0 24 24" fill="currentColor" width="26" height="26">
+      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+    </svg>
+    <span class="whatsapp-pulse"></span>
+  </a>
+
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script src="js/script.js"></script>
+</body>
+</html>
