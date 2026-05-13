@@ -43,7 +43,7 @@
   <nav id="navbar">
     <div class="nav-inner">
       <a href="index.html" class="logo-text font-playfair font-bold text-traaco-offwhite flex items-center gap-2">
-        <img src="images/Traaco-logo.png" alt="TRAACO" style="height:56px;width:56px;object-fit:contain;filter:drop-shadow(0 0 8px rgba(201,168,76,0.3));" />
+        <img src="images/Traaco-logo.png" alt="TRAACO" style="height:48px;width:48px;object-fit:contain;" />
         TRAACO
       </a>
 
@@ -323,8 +323,8 @@
         </p>
       </div>
 
-      <!-- Demo Cards — 2 col mobile, 3 col desktop -->
-      <div id="port-grid" class="grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-4 max-w-5xl mx-auto">
+      <!-- Demo Cards — 2 col on mobile AND desktop -->
+      <div id="port-grid" class="grid grid-cols-2 gap-3 md:gap-5">
 
         <!-- ── CAFÉ cards ── -->
         <div class="port-card port-cafe" data-aos="fade-up" data-aos-delay="100">
@@ -466,16 +466,16 @@
     /* ── Filter Buttons ── */
     .port-filter-btn {
       font-family: 'Poppins', sans-serif;
-      font-size: 0.7rem;
+      font-size: 0.72rem;
       font-weight: 600;
       letter-spacing: 0.03em;
-      padding: 7px 15px;
+      padding: 8px 16px;
       border-radius: 50px;
       border: 1px solid rgba(255,255,255,0.08);
       background: rgba(255,255,255,0.02);
       color: #9A9A9A;
       cursor: pointer;
-      transition: all 0.22s ease;
+      transition: all 0.25s ease;
       white-space: nowrap;
     }
     .port-filter-btn:hover {
@@ -493,91 +493,104 @@
     .port-card {
       background: rgba(255,255,255,0.02);
       border: 1px solid rgba(255,255,255,0.06);
-      border-radius: 12px;
+      border-radius: 14px;
       overflow: hidden;
-      transition: transform 0.32s cubic-bezier(0.25,0.46,0.45,0.94),
-                  border-color 0.32s ease, box-shadow 0.32s ease;
+      transition: transform 0.35s cubic-bezier(0.25,0.46,0.45,0.94), border-color 0.35s ease, box-shadow 0.35s ease;
     }
     .port-card:hover {
-      transform: translateY(-4px);
-      border-color: rgba(201,168,76,0.25);
-      box-shadow: 0 12px 32px rgba(0,0,0,0.38);
+      transform: translateY(-5px);
+      border-color: rgba(201,168,76,0.22);
+      box-shadow: 0 16px 40px rgba(0,0,0,0.35);
     }
     .demo-card-img-wrap {
       position: relative;
-      aspect-ratio: 4/3;
+      aspect-ratio: 16/10;
       overflow: hidden;
     }
     .demo-card-img {
-      width: 100%; height: 100%;
+      width: 100%;
+      height: 100%;
       object-fit: cover;
-      filter: brightness(0.68) saturate(0.8);
-      transition: transform 0.45s ease, filter 0.32s ease;
+      filter: brightness(0.7) saturate(0.85);
+      transition: transform 0.5s ease, filter 0.35s ease;
       display: block;
     }
     .port-card:hover .demo-card-img {
-      transform: scale(1.07);
-      filter: brightness(0.5) saturate(0.7);
+      transform: scale(1.06);
+      filter: brightness(0.55) saturate(0.75);
     }
     .demo-mvp-badge {
-      position: absolute; top: 7px; right: 7px;
+      position: absolute;
+      top: 8px;
+      right: 8px;
       font-family: 'Poppins', sans-serif;
-      font-size: 0.58rem; font-weight: 700;
-      letter-spacing: 0.07em; text-transform: uppercase;
-      color: #0F0F0F; background: #C9A84C;
-      padding: 2px 8px; border-radius: 50px;
-      backdrop-filter: blur(4px);
+      font-size: 0.6rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #0F0F0F;
+      background: #C9A84C;
+      padding: 3px 9px;
+      border-radius: 50px;
     }
     .demo-card-tags {
-      position: absolute; bottom: 7px; left: 7px;
-      display: flex; gap: 4px; flex-wrap: wrap;
+      position: absolute;
+      bottom: 8px;
+      left: 8px;
+      display: flex;
+      gap: 5px;
+      flex-wrap: wrap;
     }
-    /* override rest-tag size inside cards */
-    .demo-card-tags .rest-tag {
-      font-size: 0.55rem;
-      padding: 2px 7px;
+    .demo-card-body {
+      padding: 10px 12px 14px;
     }
-    .demo-card-body { padding: 9px 11px 12px; }
     .demo-card-type {
       font-family: 'Poppins', sans-serif;
-      font-size: 0.58rem; text-transform: uppercase;
-      letter-spacing: 0.12em; color: #9A9A9A;
-      margin-bottom: 2px;
+      font-size: 0.62rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: #9A9A9A;
+      margin-bottom: 3px;
     }
     .demo-card-name {
       font-family: 'Playfair Display', serif;
-      font-size: 0.92rem; font-weight: 600;
-      color: #F0ECE4; margin-bottom: 4px; line-height: 1.25;
+      font-size: 1rem;
+      font-weight: 600;
+      color: #F0ECE4;
+      margin-bottom: 4px;
+      line-height: 1.3;
     }
     .demo-card-desc {
       font-family: 'Poppins', sans-serif;
-      font-size: 0.68rem; color: #9A9A9A;
-      line-height: 1.5; margin-bottom: 8px;
+      font-size: 0.72rem;
+      color: #9A9A9A;
+      line-height: 1.55;
+      margin-bottom: 10px;
     }
     .demo-card-link {
       font-family: 'Poppins', sans-serif;
-      font-size: 0.68rem; font-weight: 600;
-      color: #C9A84C; letter-spacing: 0.02em;
-      display: inline-flex; align-items: center; gap: 3px;
-      transition: gap 0.22s ease;
+      font-size: 0.72rem;
+      font-weight: 600;
+      color: #C9A84C;
+      letter-spacing: 0.02em;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      transition: gap 0.25s ease;
     }
-    .demo-card-link:hover { gap: 7px; }
+    .demo-card-link:hover { gap: 8px; }
 
-    /* ── pulse dot ── */
+    /* ── pulse dot animation ── */
     @keyframes pulse-dot {
       0%,100% { opacity:1; transform:scale(1); }
-      50%      { opacity:0.4; transform:scale(1.5); }
+      50%      { opacity:0.5; transform:scale(1.4); }
     }
 
-    /* ── Responsive ── */
-    @media (max-width: 640px) {
-      /* 2-col on mobile: keep desc visible but shorter */
-      .demo-card-body { padding: 7px 9px 10px; }
-      .demo-card-name { font-size: 0.82rem; }
-      .demo-card-desc { font-size: 0.64rem; line-height: 1.45; }
-    }
-    @media (max-width: 380px) {
-      .demo-card-desc { display: none; }
+    /* ── Mobile fine-tune ── */
+    @media (max-width: 480px) {
+      .demo-card-body { padding: 8px 10px 12px; }
+      .demo-card-name { font-size: 0.88rem; }
+      .demo-card-desc { display: none; } /* hide desc on very small to keep compact */
     }
   </style>
 
@@ -757,7 +770,7 @@
       <div class="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12 mb-10">
         <div class="col-span-2 md:col-span-1">
           <a href="index.html" class="logo-text text-2xl font-playfair font-bold text-traaco-offwhite tracking-wider flex items-center gap-2">
-            <img src="images/Traaco-logo.png" alt="TRAACO" style="height:60px;width:60px;object-fit:contain;filter:drop-shadow(0 0 8px rgba(201,168,76,0.25));" />
+            <img src="images/Traaco-logo.png" alt="TRAACO" style="height:52px;width:52px;object-fit:contain;" />
             TRAACO
           </a>
           <p class="text-traaco-gray text-sm leading-relaxed mt-4 max-w-xs">Premium digital studio crafting cinematic web experiences for hospitality &amp; food businesses.</p>
